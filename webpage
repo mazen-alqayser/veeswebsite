@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vees: هندسة المستقبل | الحلول الذكية</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ================================================= */
+        /* === 1. متغيرات الألوان (CSS Variables) === */
+        /* ================================================= */
+        
+        :root {
+            --border-radius: 24px;
+            --transition-speed: 0.4s;
+            --font-heading: 'Cairo', sans-serif;
+            --font-body: 'IBM Plex Sans Arabic', sans-serif;
+            
+            /* الوضع الليلي (الافتراضي) */
+            --bg-primary: #050a14;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #020408;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-highlight: #ffffff;
+            
+            /* ألوان الهوية (Neon Tech) */
+            --accent-cyan: #06b6d4;
+            --accent-cyan-glow: rgba(6, 182, 212, 0.5);
+            --accent-magenta: #d946ef;
+            --accent-magenta-glow: rgba(217, 70, 239, 0.5);
+            --accent-gradient: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+            
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --nav-bg: rgba(5, 10, 20, 0.85);
+            
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+        
+        [data-theme="light"] {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-highlight: #0f172a;
+            
+            --accent-cyan: #0284c7;
+            --accent-cyan-glow: rgba(2, 132, 199, 0.3);
+            --accent-magenta: #c026d3;
+            --accent-magenta-glow: rgba(192, 38, 211, 0.3);
+            
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(0, 0, 0, 0.06);
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            
+            --shadow-glow: 0 0 15px rgba(2, 132, 199, 0.1);
+        }
+        
+        /* ================================================= */
+        /* === 2. الأساسيات (Global Reset) === */
+        /* ================================================= */
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            direction: rtl; /* سيتم تغييره عبر الجافاسكريبت */
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        /* دعم اللغة الإنجليزية */
+        html[lang="en"] body {
+            direction: ltr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--text-highlight); }
+        a { text-decoration: none; color: inherit; transition: var(--transition-speed); }
+        ul { list-style: none; }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-secondary); border-radius: 5px; border: 1px solid var(--card-border); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+        /* ================================================= */
+        /* === 3. النافبار (Navigation) === */
+        /* ================================================= */
+        
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 5%;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        .logo {
+            font-size: 2rem; font-weight: 900; letter-spacing: 1px;
+            background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-links a {
+            margin: 0 15px; font-weight: 500; color: var(--text-secondary); position: relative;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-cyan); }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; right: 0;
+            background: var(--accent-cyan); transition: width 0.3s;
+        }
+        /* تعديل الخط الاتجاهي للغة الإنجليزية */
+        html[lang="en"] .nav-links a::after { left: 0; right: auto; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-actions { display: flex; align-items: center; gap: 15px; }
+
+        .icon-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 1.3rem; color: var(--text-secondary);
+            transition: transform 0.3s ease, color 0.3s;
+            padding: 5px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .icon-btn:hover { color: var(--text-highlight); transform: scale(1.1); }
+        
+        .fa-sun { display: none; }
+        [data-theme="light"] .fa-moon { display: none; }
+        [data-theme="light"] .fa-sun { display: block; color: #f59e0b; }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: #fff; padding: 10px 25px; border-radius: 50px;
+            font-weight: 700; border: none; cursor: pointer;
+            box-shadow: 0 4px 15px var(--accent-cyan-glow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px var(--accent-magenta-glow); }
+
+          /* ================================================= */
+        /* === تنسيق شعار الصورة الجديد === */
+        /* ================================================= */
+        .logo-img-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img-container img {
+            height: 70px; /* يمكنك تعديل هذا الرقم لتكبير أو تصغير الشعار */
+            width: auto;  /* يحافظ على تناسق أبعاد الصورة */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* تأثير بسيط عند مرور الماوس على الشعار */
+        .logo-img-container img:hover {
+            transform: scale(2.05);
+        }
+
+        /* تعديل في الموبايل إذا لزم الأمر */
+        @media (max-width: 768px) {
+            .logo-img-container img {
+                height: 50px; /* شعار أصغر قليلاً على الموبايل */
+            }
+        }
+        /* ================================================= */
+        /* === 4. الهيرو (Hero Section) === */
+        /* ================================================= */
+
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: space-between;
+            padding: 120px 5% 50px; position: relative; overflow: hidden;
+        }
+        
+        .hero::before {
+            content: ''; position: absolute; top: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--accent-cyan-glow) 0%, transparent 70%);
+            opacity: 0.4; filter: blur(80px); z-index: -1;
+        }
+        html[lang="en"] .hero::before { left: -10%; right: auto; }
+
+        .hero-content { max-width: 600px; z-index: 2; }
+        .hero-tag {
+            color: var(--accent-cyan); font-weight: 700; letter-spacing: 1px;
+            display: inline-block; margin-bottom: 10px;
+        }
+        .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 30px; }
+
+        .hero-visual {
+            position: relative; width: 45%; height: 500px;
+            display: flex; justify-content: center; align-items: center;
+        }
+        
+        .orbit {
+            position: absolute; border: 1px solid var(--card-border); border-radius: 50%;
+            animation: spin 20s linear infinite;
+        }
+        .orbit-1 { width: 300px; height: 300px; border-color: var(--accent-cyan-glow); }
+        .orbit-2 { width: 450px; height: 450px; animation-direction: reverse; border-color: var(--accent-magenta-glow); }
+        .orbit-dot {
+            position: absolute; top: 50%; left: -6px; width: 12px; height: 12px;
+            background: var(--text-highlight); border-radius: 50%;
+            box-shadow: 0 0 10px var(--text-highlight);
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* ================================================= */
+        /* === 5. شريط الأرقام (Stats) === */
+        /* ================================================= */
+        
+        .stats-bar {
+            display: flex; justify-content: center; gap: 30px;
+            background: var(--bg-secondary); margin: -50px 5% 0;
+            padding: 30px; border-radius: var(--border-radius);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-glow);
+            position: relative; z-index: 10;
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; flex: 1; min-width: 200px; }
+        .stat-num {
+            font-size: 2.5rem; font-weight: 900; color: var(--text-highlight);
+            display: block; font-family: 'Cairo', sans-serif;
+        }
+        .stat-label { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* ================================================= */
+        /* === 6. شبكة الخدمات (Bento Grid) === */
+        /* ================================================= */
+
+        .section-padding { padding: 100px 5%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        
+        .bento-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+            grid-auto-rows: minmax(250px, auto);
+        }
+        
+        .bento-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--border-radius); padding: 30px;
+            transition: all 0.3s ease; position: relative; overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .bento-card:hover {
+            transform: translateY(-5px); border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .card-large { grid-column: span 2; }
+        .card-tall { grid-row: span 2; }
+        
+        .card-icon {
+            font-size: 2rem; color: var(--accent-magenta); margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05); width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center; border-radius: 15px;
+        }
+
+        /* إصلاح بطاقة Analytics Pro */
+        .analytics-visual {
+            margin-top: 20px; height: 120px; width: 100%;
+            background: linear-gradient(180deg, rgba(6,182,212,0.1) 0%, rgba(6,182,212,0) 100%);
+            border-radius: 15px;
+            position: relative; overflow: hidden;
+            border: 1px solid rgba(6,182,212,0.2);
+        }
+        .analytics-wave {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%2306b6d4" fill-opacity="0.4" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: 200% 100%;
+            animation: waveMove 5s linear infinite;
+        }
+        @keyframes waveMove { 0% { background-position-x: 0; } 100% { background-position-x: -200%; } }
+        
+        /* ================================================= */
+        /* === 7. الرسوم البيانية (Charts) === */
+        /* ================================================= */
+
+        .charts-container {
+            display: flex; gap: 30px; flex-wrap: wrap; margin-top: 50px;
+        }
+        .chart-card {
+            flex: 1; background: var(--bg-secondary); padding: 30px;
+            border-radius: var(--border-radius); border: 1px solid var(--card-border);
+            min-width: 300px;
+        }
+        
+        .bar-chart {
+            display: flex; align-items: flex-end; justify-content: space-around;
+            height: 200px; padding-top: 30px; border-bottom: 1px solid var(--card-border);
+        }
+        .bar {
+            width: 15%; background: var(--accent-gradient);
+            border-radius: 5px 5px 0 0; transition: height 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative; height: 0; 
+        }
+        .bar span {
+            position: absolute; top: -25px; width: 100%; text-align: center;
+            font-size: 0.8rem; font-weight: bold; opacity: 0; transition: 0.5s 1s;
+        }
+        .bar.active span { opacity: 1; }
+
+        /* دائرة توزيع العملاء */
+        .pie-chart-wrapper {
+            position: relative; width: 200px; height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-cyan) 0% 0%, var(--accent-magenta) 0% 100%);
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transform: scale(0);
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .pie-chart-wrapper.active { transform: scale(1); background: conic-gradient(var(--accent-cyan) 0% 65%, var(--accent-magenta) 65% 100%); }
+        .pie-hole {
+            position: absolute; width: 70%; height: 70%; background: var(--bg-secondary);
+            border-radius: 50%; top: 15%; left: 15%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: var(--text-secondary);
+        }
+
+        /* ================================================= */
+        /* === 8. صندوق الهدايا والفوتر === */
+        /* ================================================= */
+
+        /* زر الهدية */
+        .gift-box-btn {
+            position: fixed; bottom: 30px; left: 30px;
+            width: 60px; height: 60px;
+            background: linear-gradient(45deg, #ff00cc, #333399);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: #fff; cursor: pointer;
+            z-index: 2000;
+            box-shadow: 0 0 20px rgba(255, 0, 204, 0.5);
+            animation: pulseGift 2s infinite;
+        }
+        html[lang="en"] .gift-box-btn { left: auto; right: 30px; }
+        
+        @keyframes pulseGift {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 204, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(255, 0, 204, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 204, 0); }
+        }
+
+        /* النافذة المنبثقة (Modal) */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); z-index: 3000;
+            display: none; align-items: center; justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: var(--bg-secondary); padding: 40px;
+            border-radius: 20px; border: 1px solid var(--accent-cyan);
+            max-width: 500px; width: 90%; text-align: center;
+            position: relative;
+            box-shadow: 0 0 50px var(--accent-cyan-glow);
+            animation: slideUp 0.4s ease-out;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        .modal-icon { font-size: 3rem; color: gold; margin-bottom: 20px; }
+        .modal-text { font-size: 1.2rem; margin-bottom: 30px; line-height: 1.8; color: var(--text-primary); }
+        .modal-close {
+            position: absolute; top: 15px; right: 15px; font-size: 1.5rem; color: var(--text-secondary); cursor: pointer;
+        }
+        html[lang="en"] .modal-close { right: auto; left: 15px; }
+
+        footer {
+            background: var(--bg-tertiary); padding: 60px 5% 20px;
+            border-top: 1px solid var(--card-border); margin-top: 100px;
+            text-align: center;
+        }
+        .socials { margin-bottom: 20px; }
+        .socials a { font-size: 1.2rem; margin: 0 10px; color: var(--text-secondary); }
+        .socials a:hover { color: var(--accent-cyan); }
+        .dev-link { color: var(--accent-magenta); font-weight: bold; margin-top: 10px; display: inline-block; font-size: 0.9rem;}
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem; }
+            .nav-links { display: none; }
+            .hero { flex-direction: column; text-align: center; padding-top: 150px; }
+            .hero-visual { width: 100%; height: 300px; margin-top: 40px; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .card-large, .card-tall { grid-column: span 1; grid-row: span 1; }
+            .stats-bar { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2.5rem; }
+            .gift-box-btn { bottom: 20px; left: 20px; width: 50px; height: 50px; }
+            html[lang="en"] .gift-box-btn { left: auto; right: 20px; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <header class="navbar">
+<a href="#home" class="logo-img-container">
+    <img src="https://raw.githubusercontent.com/mazen-alqayser/Air-Ticket-Reservation-dr-anas-project/refs/heads/main/logo_vees.png" alt="Vees Logo">
+</a>        <nav class="nav-links">
+            <a href="#home" class="active" data-key="nav_home">الرئيسية</a>
+            <a href="#services" data-key="nav_services">الخدمات</a>
+            <a href="#stats" data-key="nav_stats">الأرقام</a>
+            <a href="#contact" data-key="nav_contact">اتصل بنا</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="icon-btn" id="langToggle" aria-label="Language">
+                <i class="fas fa-globe"></i>
+                <span style="font-size: 0.8rem; margin-right: 5px; font-weight: bold;">En</span>
+            </button>
+            
+            <button class="icon-btn theme-toggle-btn" id="themeToggle" aria-label="Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <a href="https://mazenalqayser.pythonanywhere.com/login" target="_blank" class="btn-primary" data-key="btn_start" style="text-align: center; display: inline-block;">
+                ابدأ الآن
+            </a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-tag" data-key="hero_tag">#هندسة_المستقبل</span>
+            <h1 data-key="hero_title">نحول البيانات المعقدة<br>إلى قرارات ذكية.</h1>
+            <p data-key="hero_desc">منصة Vees تقدم حلول ERP و LMS متكاملة مدعومة بالذكاء الاصطناعي لتسريع نمو أعمالك في العصر الرقمي.</p>
+            <a href="#services" class="btn-primary" style="padding: 15px 40px; font-size: 1.1rem; display:inline-block;" data-key="btn_discover">اكتشف الانظمه</a>
+        </div>
+        <div class="hero-visual">
+            <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+            <i class="fas fa-cube" style="font-size: 5rem; color: var(--accent-cyan); text-shadow: 0 0 30px var(--accent-cyan);"></i>
+        </div>
+    </section>
+
+    <div class="stats-bar" id="stats" onclick="window.scrollTo(0, document.body.scrollHeight)" style="cursor: pointer;" title="انقر للذهاب للأسفل">
+        <div class="stat-item">
+            <span class="stat-num" data-target="+200">0</span>
+            <span class="stat-label" data-key="stat_clients">عميل نشط</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num" data-target="+7">0</span>
+            <span class="stat-label" data-key="stat_countries">دولة حول العالم</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num" data-target="99">0</span>
+            <span class="stat-label" data-key="stat_satisfaction">% نسبة الرضا</span>
+        </div>
+    </div>
+
+    <section class="section-padding" id="services">
+        <div class="section-header">
+            <h2 data-key="services_title">منظومة Vees المتكاملة</h2>
+            <p style="color: var(--text-secondary);" data-key="services_sub">حلول تقنية مصممة لتتناغم معاً بسلاسة.</p>
+        </div>
+        
+        <div class="bento-grid">
+            <div class="bento-card card-large">
+                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                <h3>Vees ERP AI</h3>
+                <p style="color:var(--text-secondary); margin-top:10px;" data-key="card_erp_desc">نظام إدارة موارد المؤسسات الذكي. يتنبأ بالاحتياجات قبل حدوثها ويقدم تقارير مالية دقيقة.</p>
+            </div>
+            <div class="bento-card">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>LMS Education</h3>
+                <p style="color:var(--text-secondary);" data-key="card_lms_desc">منصة تعليمية تفاعلية للمدارس والجامعات.</p>
+            </div>
+            <div class="bento-card card-tall">
+                <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>Analytics Pro</h3>
+                <p style="color:var(--text-secondary);" data-key="card_analytics_desc">لوحة تحكم مركزية لجميع بياناتك. اتخذ قراراتك بناءً على أرقام حقيقية ومحدثة لحظياً.</p>
+                <div class="analytics-visual">
+                    <div class="analytics-wave"></div>
+                </div>
+            </div>
+            <div class="bento-card">
+                <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3>E-Commerce</h3>
+                <p style="color:var(--text-secondary);" data-key="card_ecom_desc">حلول المتاجر الإلكترونية المتكاملة.</p>
+            </div>
+            <div class="bento-card">
+                <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile Apps</h3>
+                <p style="color:var(--text-secondary);" data-key="card_apps_desc">تطبيقات نيتيف (Native) فائقة السرعة.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-secondary);">
+        <div class="section-header">
+            <h2 data-key="growth_title">نمو الأداء</h2>
+        </div>
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3 data-key="chart_sales">إحصائيات التقدم الشهري </h3>
+                <div class="bar-chart" id="salesChart">
+                    <div class="bar" data-height="40%"><span>8</span></div>
+                    <div class="bar" data-height="60%"><span>9</span></div>
+                    <div class="bar" data-height="45%"><span>10</span></div>
+                    <div class="bar" data-height="85%"><span>11</span></div>
+                    <div class="bar" data-height="100%"><span>12</span></div>
+                </div>
+            </div>
+            <div class="chart-card" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <h3 data-key="chart_clients">توزيع العملاء</h3>
+                <div class="pie-chart-wrapper" id="pieChart">
+                    <div class="pie-hole">Vees</div>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <div style="display: flex; align-items: center;"><span style="width:10px; height:10px; background:var(--accent-cyan); display:inline-block; margin-left:5px;"></span> <span data-key="label_companies">شركات</span></div>
+                    <div style="display: flex; align-items: center;"><span style="width:10px; height:10px; background:var(--accent-magenta); display:inline-block; margin-left:5px;"></span> <span data-key="label_individuals">أفراد</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gift-box-btn" id="giftBtn">
+        <i class="fas fa-gift"></i>
+    </div>
+
+    <div class="modal-overlay" id="giftModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeModal">&times;</span>
+            <div class="modal-icon"><i class="fas fa-star"></i></div>
+            <h3 style="margin-bottom: 15px;" data-key="modal_title">رسالة اليوم</h3>
+            <p class="modal-text" id="motivationText">النجاح هو المجموع الكلي لمجهودات صغيرة تتكرر يوماً بعد يوم.</p>
+            <button class="btn-primary" id="closeModalBtn" data-key="btn_awesome">رائع!</button>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="socials">
+            <a href="https://www.facebook.com/mazen.mahameb?locale=ar_AR"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/%D9%85%D8%A7%D8%B2%D9%86-%D8%A7%D9%84%D9%82%D9%8A%D8%B5%D8%B1-mazen-alqayser-929304213/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/mazen-alqayser"><i class="fab fa-github"></i></a>
+        </div>
+        <p data-key="footer_copy">&copy; 2030 Vees Technologies. جميع الحقوق محفوظة.</p>
+        <a href="https://mazenalqaysercv.vercel.app/" class="dev-link" data-key="dev_link">زيارة موقع المطور الشخصي <i class="fas fa-external-link-alt"></i></a>
+    </footer>
+
+    <script>
+        // ===========================================
+        // === قاموس الترجمة (Translation Dictionary) ===
+        // ===========================================
+        const translations = {
+            ar: {
+                nav_home: "الرئيسية", nav_services: "الخدمات", nav_stats: "الأرقام", nav_contact: "اتصل بنا", btn_start: "ابدأ الآن",
+                hero_tag: "#هندسة_المستقبل", hero_title: "نحول البيانات المعقدة<br>إلى قرارات ذكية.", hero_desc: "منصة Vees تقدم حلول ERP و LMS متكاملة مدعومة بالذكاء الاصطناعي لتسريع نمو أعمالك في العصر الرقمي.", btn_discover: "اكتشف النظام",
+                stat_clients: "عميل نشط", stat_countries: "دولة حول العالم", stat_satisfaction: "% نسبة الرضا",
+                services_title: "منظومة Vees المتكاملة", services_sub: "حلول تقنية مصممة لتتناغم معاً بسلاسة.",
+                card_erp_desc: "نظام إدارة موارد المؤسسات الذكي. يتنبأ بالاحتياجات قبل حدوثها ويقدم تقارير مالية دقيقة.",
+                card_lms_desc: "منصة تعليمية تفاعلية للمدارس والجامعات.",
+                card_analytics_desc: "لوحة تحكم مركزية لجميع بياناتك. اتخذ قراراتك بناءً على أرقام حقيقية ومحدثة لحظياً.",
+                card_ecom_desc: "حلول المتاجر الإلكترونية المتكاملة.",
+                card_apps_desc: "تطبيقات نيتيف (Native) فائقة السرعة.",
+                growth_title: "نمو الأداء", chart_sales: "إحصائيات المبيعات السنوية", chart_clients: "توزيع العملاء",
+                label_companies: "شركات", label_individuals: "أفراد",
+                modal_title: "رسالة إلهام", btn_awesome: "رائع!",
+                footer_copy: "&copy; 2030 Vees Technologies. جميع الحقوق محفوظة.",
+                dev_link: "زيارة موقع المطور الشخصي"
+            },
+            en: {
+                nav_home: "Home", nav_services: "Services", nav_stats: "Stats", nav_contact: "Contact", btn_start: "Start Now",
+                hero_tag: "#Future_Engineering", hero_title: "Turning Complex Data<br>Into Smart Decisions.", hero_desc: "Vees platform offers integrated AI-powered ERP & LMS solutions to accelerate your business growth in the digital age.", btn_discover: "Discover System",
+                stat_clients: "Active Clients", stat_countries: "Countries", stat_satisfaction: "Satisfaction Rate",
+                services_title: "Vees Integrated Ecosystem", services_sub: "Tech solutions designed to harmonize seamlessly.",
+                card_erp_desc: "Smart ERP system. Predicts needs before they happen and provides accurate financial reports.",
+                card_lms_desc: "Interactive educational platform for schools and universities.",
+                card_analytics_desc: "Central dashboard for all your data. Make decisions based on real-time, updated numbers.",
+                card_ecom_desc: "Integrated E-Commerce solutions.",
+                card_apps_desc: "Blazing fast Native mobile applications.",
+                growth_title: "Performance Growth", chart_sales: "Annual Sales Stats", chart_clients: "Customer Distribution",
+                label_companies: "Companies", label_individuals: "Individuals",
+                modal_title: "Inspiration", btn_awesome: "Awesome!",
+                footer_copy: "&copy; 2030 Vees Technologies. All Rights Reserved.",
+                dev_link: "Visit Developer Portfolio"
+            }
+        };
+
+        const motivations = {
+            ar: [
+                "النجاح هو المجموع الكلي لمجهودات صغيرة تتكرر يوماً بعد يوم.",
+                "لا تتوقف عندما تتعب، توقف عندما تنتهي.",
+                "مستقبلك يُصنع بما تفعله اليوم، وليس غداً.",
+                "الأحلام لا تعمل إلا إذا قمت أنت بالعمل.",
+                "الطريق إلى النجاح دائماً تحت الإنشاء.",
+                "الرحله طويله فاستمتع بها ء."
+
+            ],
+            en: [
+                "Success is the sum of small efforts, repeated day in and day out.",
+                "Don't stop when you're tired. Stop when you're done.",
+                "Your future is created by what you do today, not tomorrow.",
+                "Dreams don't work unless you do.",
+                "The road to success is always under construction.",
+                "The journey is long, so enjoy it."
+            ]
+        };
+
+        // ===========================================
+        // === Vees Application Logic ===
+        // ===========================================
+        
+        const VeesApp = {
+            state: {
+                lang: 'ar',
+                theme: 'dark'
+            },
+            dom: {
+                themeBtn: document.getElementById('themeToggle'),
+                langBtn: document.getElementById('langToggle'),
+                body: document.body,
+                html: document.documentElement,
+                counters: document.querySelectorAll('.stat-num'),
+                bars: document.querySelectorAll('.bar'),
+                pieChart: document.getElementById('pieChart'),
+                giftBtn: document.getElementById('giftBtn'),
+                giftModal: document.getElementById('giftModal'),
+                closeModal: document.getElementById('closeModal'),
+                closeModalBtn: document.getElementById('closeModalBtn'),
+                motivationText: document.getElementById('motivationText')
+            },
+
+            init() {
+                this.setupTheme();
+                this.setupLanguage();
+                this.setupObservers();
+                this.setupGiftBox();
+            },
+
+            // 1. إعداد الثيم
+            setupTheme() {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                this.dom.body.setAttribute('data-theme', savedTheme);
+
+                this.dom.themeBtn.addEventListener('click', () => {
+                    const current = this.dom.body.getAttribute('data-theme');
+                    const next = current === 'dark' ? 'light' : 'dark';
+                    this.dom.body.setAttribute('data-theme', next);
+                    localStorage.setItem('theme', next);
+                });
+            },
+
+            // 2. إعداد اللغة
+            setupLanguage() {
+                this.dom.langBtn.addEventListener('click', () => {
+                    this.state.lang = this.state.lang === 'ar' ? 'en' : 'ar';
+                    this.updateLanguage();
+                });
+            },
+
+            updateLanguage() {
+                const lang = this.state.lang;
+                const dir = lang === 'ar' ? 'rtl' : 'ltr';
+                
+                // تحديث السمات
+                this.dom.html.setAttribute('lang', lang);
+                this.dom.html.setAttribute('dir', dir);
+                
+                // تحديث النصوص
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if(translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // تحديث زر اللغة
+                this.dom.langBtn.querySelector('span').innerText = lang === 'ar' ? 'En' : 'عربي';
+            },
+
+            // 3. صندوق الهدايا
+            setupGiftBox() {
+                const showModal = () => {
+                    // اختيار رسالة عشوائية حسب اللغة
+                    const messages = motivations[this.state.lang];
+                    const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+                    this.dom.motivationText.innerText = randomMsg;
+                    
+                    this.dom.giftModal.style.display = 'flex';
+                };
+
+                const hideModal = () => {
+                    this.dom.giftModal.style.display = 'none';
+                };
+
+                this.dom.giftBtn.addEventListener('click', showModal);
+                this.dom.closeModal.addEventListener('click', hideModal);
+                this.dom.closeModalBtn.addEventListener('click', hideModal);
+                
+                // إغلاق عند النقر خارج الصندوق
+                this.dom.giftModal.addEventListener('click', (e) => {
+                    if (e.target === this.dom.giftModal) hideModal();
+                });
+            },
+
+            // 4. مراقبة الظهور (Observers)
+            setupObservers() {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+
+                        // عداد الأرقام
+                        if (entry.target.classList.contains('stat-num')) {
+                            this.animateCounter(entry.target);
+                            obs.unobserve(entry.target);
+                        }
+
+                        // المخطط العمودي
+                        if (entry.target.classList.contains('bar')) {
+                            entry.target.style.height = entry.target.getAttribute('data-height');
+                            entry.target.classList.add('active');
+                            obs.unobserve(entry.target);
+                        }
+
+                        // المخطط الدائري
+                        if (entry.target.id === 'pieChart') {
+                            entry.target.classList.add('active');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.dom.counters.forEach(el => observer.observe(el));
+                this.dom.bars.forEach(el => observer.observe(el));
+                if(this.dom.pieChart) observer.observe(this.dom.pieChart);
+            },
+
+            animateCounter(el) {
+                const target = +el.getAttribute('data-target');
+                const duration = 2000; 
+                const increment = target / (duration / 16);
+                
+                let current = 0;
+                const update = () => {
+                    current += increment;
+                    if (current < target) {
+                        el.innerText = Math.ceil(current);
+                        requestAnimationFrame(update);
+                    } else {
+                        el.innerText = target + (target === 99 ? '%' : '+');
+                    }
+                };
+                update();
+            }
+        };
+
+        // تشغيل التطبيق
+        document.addEventListener('DOMContentLoaded', () => {
+            VeesApp.init();
+        });
+    </script>
+</body>
+</html>
