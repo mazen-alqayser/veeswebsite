@@ -7,10 +7,14 @@
     <!-- ==================== SEO Meta Tags Enhanced ==================== -->
     <title>Vees Technologies | شركة التقنية الرائدة - تصميم الجرافيك، الأنظمة البرمجية، الأوتوميشن، الذكاء الاصطناعي</title>
     <meta name="description" content="Vees Technologies - شركة تقنية رائدة أسسها مازن القيصر. متخصصون في تصميم الجرافيك، تطوير الأنظمة البرمجية (ERP, CRM, LMS)، الأوتوميشن الذكي، تحليل البيانات، أنظمة الكاشير، تطبيقات الموبايل، وتصميم المواقع الإلكترونية. حلول تقنية متكاملة للوكالات والصيدليات والشركات الناشئة.">
-    <meta name="keywords" content="Vees Technologies, مازن القيصر, تصميم جرافيك, أنظمة برمجية, ERP, CRM, LMS, أوتوميشن, تحليل بيانات, تصميم مواقع, أنظمة كاشير, تطبيقات موبايل, ذكاء اصطناعي, وكالات تسويق, صيدليات, شركات ناشئة, startup, Cairo, Egypt">
+    <meta name="keywords" content="Vees Technologies, مازن القيصر, تصميم جرافيك, أنظمة برمجية, ERP, CRM, LMS, أوتوميشن, تحليل بيانات, تصميم مواقع, أنظمة كاشير, تطبيقات موبايل, ذكاء اصطناعي, حلول رقمية, تطوير تطبيقات, تحليل بيانات, شركة تقنية, أتمتة, digital solutions, software company, data analytics, وكالات تسويق, صيدليات, شركات ناشئة, startup, Cairo, Egypt">
     <meta name="author" content="مازن القيصر - Founder & CEO of Vees Technologies">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://vees-tech.com/">
+    <!-- Hreflang Tags for SEO -->
+    <link rel="alternate" hreflang="ar" href="https://vees-tech.com/?lang=ar">
+    <link rel="alternate" hreflang="en" href="https://vees-tech.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://vees-tech.com/">
     <meta name="theme-color" content="#001F66">
     <meta name="msapplication-TileColor" content="#001F66">
     
@@ -51,7 +55,7 @@
             "url": "https://mazenalqaysercv.vercel.app/",
             "sameAs": [
                 "https://www.facebook.com/mazen.mahameb",
-                "https://www.linkedin.com/in/mazen-alqayser",
+                "https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
                 "https://github.com/mazen-alqayser"
             ]
         },
@@ -75,7 +79,7 @@
         },
         "sameAs": [
             "https://www.facebook.com/mazen.mahameb",
-            "https://www.linkedin.com/in/mazen-alqayser",
+            "https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             "https://github.com/mazen-alqayser",
             "https://t.me/vees_agency_bot"
         ],
@@ -147,6 +151,34 @@
                     "@type": "Answer",
                     "text": "أسس مازن القيصر شركة Vees Technologies عام 2020، وهو الرئيس التنفيذي للشركة ومطور خبير في مجالات متعددة."
                 }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "الرئيسية",
+                "item": "https://vees-tech.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "الخدمات",
+                "item": "https://vees-tech.com/#services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "تواصل معنا",
+                "item": "https://vees-tech.com/#contact"
             }
         ]
     }
@@ -3416,6 +3448,24 @@
             .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; transform: none; }
         }
         
+
+        /* ================================================================ */
+        /* =============== RTL MARQUEE FIXES ============================= */
+        /* ================================================================ */
+        
+        /* Reverse marquee direction for RTL Arabic layout */
+        html[dir="rtl"] .team-marquee,
+        html[dir="rtl"] .team-section .team-marquee {
+            animation-direction: reverse;
+        }
+        
+        html[dir="rtl"] .testimonials-slider {
+            animation-direction: reverse;
+        }
+        /* ================================================================ */
+        /* =============== PRINT STYLES ================================== */
+        /* ================================================================ */
+        
         @media print {
             .navbar, .telegram-float, .codebot-float, .scroll-top, .modal-overlay, #particles-canvas, .bg-orbs, .bg-grid, .intro-overlay { display: none !important; }
             body { background: white; color: black; }
@@ -3534,16 +3584,16 @@
                     
                     <div class="hero-stats reveal stagger-5">
                         <div class="hero-stat">
-                            <span class="hero-stat-number" data-count="500">0</span><span class="stat-suffix">+</span>
-                            <span class="hero-stat-label" data-key="stat_projects">مشروع منجز</span>
+                            <span class="hero-stat-number" data-count="500">100%</span><span class="stat-suffix">+</span>
+                            <span class="hero-stat-label" data-key="stat_projects">الانجاز</span>
                         </div>
                         <div class="hero-stat">
-                            <span class="hero-stat-number" data-count="200">0</span><span class="stat-suffix">+</span>
+                            <span class="hero-stat-number" data-count="200">99%</span><span class="stat-suffix">+</span>
                             <span class="hero-stat-label" data-key="stat_clients">عميل راضٍ</span>
                         </div>
                         <div class="hero-stat">
-                            <span class="hero-stat-number" data-count="7">0</span><span class="stat-suffix">+</span>
-                            <span class="hero-stat-label" data-key="stat_countries">دول حول العالم</span>
+                            <span class="hero-stat-number" data-count="7">90%</span><span class="stat-suffix">+</span>
+                            <span class="hero-stat-label" data-key="stat_countries">دقه العلم والستجابه مقارنه بالشركات حول العالم العالم</span>
                         </div>
                     </div>
                 </div>
@@ -3750,7 +3800,7 @@
                                 <li><i class="fas fa-check"></i> تقارير شهرية</li>
                                 <li><i class="fas fa-check"></i> دعم فني via واتساب</li>
                             </ul>
-                            <button class="btn-secondary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الأساسية" target="_blank" rel="noopener" class="btn-secondary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
                         
                         <div class="pricing-card featured reveal stagger-2">
@@ -3766,7 +3816,7 @@
                                 <li><i class="fas fa-check"></i> تدريب الفريق</li>
                                 <li><i class="fas fa-check"></i> خصم 25% على التجديد</li>
                             </ul>
-                            <button class="btn-primary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الاحترافية" target="_blank" rel="noopener" class="btn-primary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
                         
                         <div class="pricing-card reveal stagger-3">
@@ -3781,7 +3831,7 @@
                                 <li><i class="fas fa-check"></i> SLA ضمان 99.9%</li>
                                 <li><i class="fas fa-check"></i> تدريب ودعم على-site</li>
                             </ul>
-                            <button class="btn-primary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الاحترافية" target="_blank" rel="noopener" class="btn-primary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
                     </div>
 
@@ -3797,7 +3847,7 @@
                                 <li><i class="fas fa-check"></i> تقارير مبيعات</li>
                                 <li><i class="fas fa-check"></i> دعم فني أساسي</li>
                             </ul>
-                            <button class="btn-secondary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الأساسية" target="_blank" rel="noopener" class="btn-secondary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
 
                         <div class="pricing-card featured reveal stagger-2">
@@ -3813,7 +3863,7 @@
                                 <li><i class="fas fa-check"></i> دعم فني 24/7</li>
                                 <li><i class="fas fa-check"></i> تدريب مجاني</li>
                             </ul>
-                            <button class="btn-primary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الاحترافية" target="_blank" rel="noopener" class="btn-primary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
 
                         <div class="pricing-card reveal stagger-3">
@@ -3827,7 +3877,7 @@
                                 <li><i class="fas fa-check"></i> مدير حساب مخصص</li>
                                 <li><i class="fas fa-check"></i> تكامل مع التأمين</li>
                             </ul>
-                            <button class="btn-primary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الاحترافية" target="_blank" rel="noopener" class="btn-primary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
                     </div>
 
@@ -3843,7 +3893,7 @@
                                 <li><i class="fas fa-check"></i> شهادة SSL</li>
                                 <li><i class="fas fa-check"></i> دعم فني أساسي</li>
                             </ul>
-                            <button class="btn-secondary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الأساسية" target="_blank" rel="noopener" class="btn-secondary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
 
                         <div class="pricing-card featured reveal stagger-2">
@@ -3859,7 +3909,7 @@
                                 <li><i class="fas fa-check"></i> دعم فني 24/7</li>
                                 <li><i class="fas fa-check"></i> استشارات استراتيجية</li>
                             </ul>
-                            <button class="btn-primary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الاحترافية" target="_blank" rel="noopener" class="btn-primary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
 
                         <div class="pricing-card reveal stagger-3">
@@ -3873,7 +3923,7 @@
                                 <li><i class="fas fa-check"></i> تكامل APIs خارجية</li>
                                 <li><i class="fas fa-check"></i> CTO كخدمة</li>
                             </ul>
-                            <button class="btn-primary pricing-btn">اطلب الآن</button>
+                            <a href="https://wa.me/201124592083?text=مرحباً، أريد الاستفسار عن باقة الوكالة الاحترافية" target="_blank" rel="noopener" class="btn-primary pricing-btn" style="text-align:center;">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
@@ -3958,210 +4008,364 @@
                 </div>
             </div>
         </section>
+<!-- ==================== TEAM SECTION ==================== -->
+<section class="team-section section-padding" id="team" aria-label="فريق العمل">
+    <style>
+        .team-section .team-marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+        }
 
-        <!-- ==================== TEAM SECTION ==================== -->
-        <section class="team-section section-padding" id="team" aria-label="فريق العمل">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle reveal" data-key="team_subtitle">فريقنا</span>
-                    <h2 class="section-title reveal stagger-1" data-key="team_title">عقول مبدعة، نتائج استثنائية</h2>
-                    <p class="section-description reveal stagger-2" data-key="team_desc">فريق من الخبراء والمحترفين يعملون بشغف لتحقيق رؤيتك</p>
+        .team-section .team-marquee {
+            display: flex;
+            width: max-content;
+            animation: team-infinite-scroll 50s linear infinite;
+            will-change: transform;
+        }
+
+        .team-section .team-marquee:hover {
+            animation-play-state: resume;
+        }
+
+        @keyframes team-infinite-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .team-section .team-member {
+            flex: 0 0 280px;
+            max-width: 280px;
+            margin-inline-end: 24px;
+        }
+
+        @media (min-width: 1400px) {
+            .team-section .team-member {
+                flex: 0 0 310px;
+                max-width: 310px;
+                margin-inline-end: 28px;
+            }
+            .team-section .team-marquee {
+                animation-duration: 70s;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-section .team-member {
+                flex: 0 0 230px;
+                max-width: 230px;
+                margin-inline-end: 16px;
+                padding: 22px 14px;
+            }
+            .team-section .team-marquee {
+                animation-duration: 50s;
+            }
+            .team-section .member-avatar-wrapper {
+                width: 80px;
+                height: 80px;
+            }
+            .team-section .member-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 1.5rem;
+            }
+            .team-section .member-name {
+                font-size: 1rem;
+            }
+            .team-section .member-role {
+                font-size: 0.75rem;
+            }
+            .team-section .member-skill {
+                font-size: 0.65rem;
+                padding: 2px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-section .team-member {
+                flex: 0 0 200px;
+                max-width: 200px;
+                margin-inline-end: 12px;
+                padding: 18px 12px;
+            }
+            .team-section .team-marquee {
+                animation-duration: 45s;
+            }
+            .team-section .member-avatar-wrapper {
+                width: 68px;
+                height: 68px;
+            }
+            .team-section .member-avatar {
+                width: 68px;
+                height: 68px;
+                font-size: 1.3rem;
+            }
+            .team-section .member-name {
+                font-size: 0.9rem;
+            }
+            .team-section .member-role {
+                font-size: 0.7rem;
+            }
+            .team-section .member-skills {
+                gap: 4px;
+            }
+            .team-section .member-skill {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle reveal" data-key="team_subtitle">فريقنا</span>
+            <h2 class="section-title reveal stagger-1" data-key="team_title">عقول مبدعة، نتائج استثنائية</h2>
+            <p class="section-description reveal stagger-2" data-key="team_desc">فريق من الخبراء والمحترفين يعملون بشغف لتحقيق رؤيتك</p>
+        </div>
+    </div>
+
+    <div class="team-marquee-container">
+        <div class="team-marquee">
+            <!-- ===== المجموعة الأولى ===== -->
+            <!-- العضو 1 - مازن القيصر - المؤسس ومطور برمجيات وذكاء اصطناعي -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <img src="https://avatars.githubusercontent.com/u/118674099?v=4" alt="مازن القيصر - المؤسس ومطور برمجيات وذكاء اصطناعي" class="member-avatar" itemprop="image" loading="lazy">
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">مازن القيصر</h4>
+                <span class="member-role" itemprop="jobTitle">المؤسس ومطور برمجيات وذكاء اصطناعي</span>
+                <div class="member-skills">
+                    <span class="member-skill">Full Stack</span>
+                    <span class="member-skill">AI/ML</span>
+                    <span class="member-skill">System Design</span>
+                </div>
+                <div class="member-socials">
+                    <a href="https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
 
-            <div class="team-marquee-container">
-                <div class="team-marquee">
-                    <!-- Team Member 1 - Founder -->
-                    <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                        <div class="member-avatar-wrapper">
-                            <img src="https://avatars.githubusercontent.com/u/118674099?v=4" alt="مازن القيصر - Founder & CEO" class="member-avatar" itemprop="image" loading="lazy">
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name" itemprop="name">مازن القيصر</h4>
-                        <span class="member-role" itemprop="jobTitle">Founder & CEO</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Full Stack</span>
-                            <span class="member-skill">AI/ML</span>
-                            <span class="member-skill">System Design</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="https://www.linkedin.com/in/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                            <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 2 -->
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">SA</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">سارة أحمد</h4>
-                        <span class="member-role">Lead UI/UX Designer</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Figma</span>
-                            <span class="member-skill">Adobe XD</span>
-                            <span class="member-skill">Prototyping</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Behance" class="member-social"><i class="fab fa-behance"></i></a>
-                            <a href="#" aria-label="Dribbble" class="member-social"><i class="fab fa-dribbble"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 3 -->
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">AK</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">أحمد خالد</h4>
-                        <span class="member-role">Senior Backend Developer</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Node.js</span>
-                            <span class="member-skill">Python</span>
-                            <span class="member-skill">PostgreSQL</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 4 -->
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-gold)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">NM</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">نور محمد</h4>
-                        <span class="member-role">Mobile Developer</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Flutter</span>
-                            <span class="member-skill">React Native</span>
-                            <span class="member-skill">Swift</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 5 -->
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">OA</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">عمر علي</h4>
-                        <span class="member-role">Data Scientist</span>
-                        <div class="member-skills">
-                            <span class="member-skill">TensorFlow</span>
-                            <span class="member-skill">Power BI</span>
-                            <span class="member-skill">SQL</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Kaggle" class="member-social"><i class="fas fa-chart-line"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Duplicate for infinite scroll -->
-                    <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                        <div class="member-avatar-wrapper">
-                            <img src="https://avatars.githubusercontent.com/u/118674099?v=4" alt="مازن القيصر - Founder & CEO" class="member-avatar" loading="lazy">
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name" itemprop="name">مازن القيصر</h4>
-                        <span class="member-role" itemprop="jobTitle">Founder & CEO</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Full Stack</span>
-                            <span class="member-skill">AI/ML</span>
-                            <span class="member-skill">System Design</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="https://www.linkedin.com/in/mazen-alqayser" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                            <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">SA</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">سارة أحمد</h4>
-                        <span class="member-role">Lead UI/UX Designer</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Figma</span>
-                            <span class="member-skill">Adobe XD</span>
-                            <span class="member-skill">Prototyping</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Behance" class="member-social"><i class="fab fa-behance"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">AK</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">أحمد خالد</h4>
-                        <span class="member-role">Senior Backend Developer</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Node.js</span>
-                            <span class="member-skill">Python</span>
-                            <span class="member-skill">PostgreSQL</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-gold)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">NM</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">نور محمد</h4>
-                        <span class="member-role">Mobile Developer</span>
-                        <div class="member-skills">
-                            <span class="member-skill">Flutter</span>
-                            <span class="member-skill">React Native</span>
-                            <span class="member-skill">Swift</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="member-avatar-wrapper">
-                            <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">OA</div>
-                            <div class="member-avatar-ring"></div>
-                        </div>
-                        <h4 class="member-name">عمر علي</h4>
-                        <span class="member-role">Data Scientist</span>
-                        <div class="member-skills">
-                            <span class="member-skill">TensorFlow</span>
-                            <span class="member-skill">Power BI</span>
-                            <span class="member-skill">SQL</span>
-                        </div>
-                        <div class="member-socials">
-                            <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Kaggle" class="member-social"><i class="fas fa-chart-line"></i></a>
-                        </div>
-                    </div>
+            <!-- العضو 2 - مدثر الهادي - جرافيك ديزاين -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">مﻫ</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">مدثر الهادي</h4>
+                <span class="member-role" itemprop="jobTitle">جرافيك ديزاين</span>
+                <div class="member-skills">
+                    <span class="member-skill">Graphic Design</span>
+                    <span class="member-skill">UI/UX</span>
+                    <span class="member-skill">Branding</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.behance.net/Mudther_Alhadi" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="member-social"><i class="fab fa-behance"></i></a>
+                    <a href="#" aria-label="Dribbble" class="member-social"><i class="fab fa-dribbble"></i></a>
                 </div>
             </div>
-        </section>
+
+            <!-- العضو 3 - سعد اسامه - مطور ذكاء اصطناعي وأوتوميشن -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">سع</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">سعد اسامه</h4>
+                <span class="member-role" itemprop="jobTitle">مطور ذكاء اصطناعي وأوتوميشن</span>
+                <div class="member-skills">
+                    <span class="member-skill">Automation</span>
+                    <span class="member-skill">AI</span>
+                    <span class="member-skill">RPA</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- العضو 4 - أ- صلاح - داتا أناليسيس -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-gold)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">صل</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">صلاح الدين عبد العزيز</h4>
+                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
+                <div class="member-skills">
+                    <span class="member-skill">Data Analysis</span>
+                    <span class="member-skill">Power BI</span>
+                    <span class="member-skill">SQL</span>
+                </div>
+                <div class="member-socials">
+                    <a href="https://www.linkedin.com/in/salaheldin-abdoelziz-a3834336a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Kaggle" class="member-social"><i class="fas fa-chart-line"></i></a>
+                </div>
+            </div>
+
+
+            <!-- العضو 5 - نورا - داتا أناليسيس -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #ff6b9d, var(--brand-blue)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">نو</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">نورا</h4>
+                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
+                <div class="member-skills">
+                    <span class="member-skill">Data Analysis</span>
+                    <span class="member-skill">Python</span>
+                    <span class="member-skill">SQL</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- العضو 6 - اسيا مبارك - داتا أناليسيس -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">أس</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">اسيا مبارك</h4>
+                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
+                <div class="member-skills">
+                    <span class="member-skill">Data Analysis</span>
+                    <span class="member-skill">Research</span>
+                    <span class="member-skill">Reporting</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- ===== نسخة مكررة للتكرار اللانهائي السلس ===== -->
+            <!-- العضو 1 - مازن القيصر -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <img src="https://avatars.githubusercontent.com/u/118674099?v=4" alt="مازن القيصر - المؤسس ومطور برمجيات وذكاء اصطناعي" class="member-avatar" itemprop="image" loading="lazy">
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">مازن القيصر</h4>
+                <span class="member-role" itemprop="jobTitle">المؤسس ومطور برمجيات وذكاء اصطناعي</span>
+                <div class="member-skills">
+                    <span class="member-skill">Full Stack</span>
+                    <span class="member-skill">AI/ML</span>
+                    <span class="member-skill">System Design</span>
+                </div>
+                <div class="member-socials">
+                    <a href="https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <!-- العضو 2 - مدثر الهادي -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">مﻫ</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">مدثر الهادي</h4>
+                <span class="member-role" itemprop="jobTitle">جرافيك ديزاين</span>
+                <div class="member-skills">
+                    <span class="member-skill">Graphic Design</span>
+                    <span class="member-skill">UI/UX</span>
+                    <span class="member-skill">Branding</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.behance.net/Mudther_Alhadi" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="member-social"><i class="fab fa-behance"></i></a>
+                    <a href="#" aria-label="Dribbble" class="member-social"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+
+            <!-- العضو 3 - سعد اسامه -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">سع</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">سعد اسامه</h4>
+                <span class="member-role" itemprop="jobTitle">مطور ذكاء اصطناعي وأوتوميشن</span>
+                <div class="member-skills">
+                    <span class="member-skill">Automation</span>
+                    <span class="member-skill">AI</span>
+                    <span class="member-skill">RPA</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- العضو 4 - أ- صلاح -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-gold)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">صل</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">صلاح الدين عبد العزيز</h4>
+                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
+                <div class="member-skills">
+                    <span class="member-skill">Data Analysis</span>
+                    <span class="member-skill">Power BI</span>
+                    <span class="member-skill">SQL</span>
+                </div>
+                <div class="member-socials">
+                    <a href="https://www.linkedin.com/in/salaheldin-abdoelziz-a3834336a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Kaggle" class="member-social"><i class="fas fa-chart-line"></i></a>
+                </div>
+            </div>
+
+
+            <!-- العضو 5 - نورا - داتا أناليسيس -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, #ff6b9d, var(--brand-blue)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">نو</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">نورا</h4>
+                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
+                <div class="member-skills">
+                    <span class="member-skill">Data Analysis</span>
+                    <span class="member-skill">Python</span>
+                    <span class="member-skill">SQL</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- العضو 6 - اسيا مبارك -->
+            <div class="team-member" itemscope itemtype="https://schema.org/Person">
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">أس</div>
+                    <div class="member-avatar-ring"></div>
+                </div>
+                <h4 class="member-name" itemprop="name">اسيا مبارك</h4>
+                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
+                <div class="member-skills">
+                    <span class="member-skill">Data Analysis</span>
+                    <span class="member-skill">Research</span>
+                    <span class="member-skill">Reporting</span>
+                </div>
+                <div class="member-socials">
+                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- ==================== CHATBOT SECTION ==================== -->
         <section class="chatbot-section section-padding" id="chatbot" aria-label="بوت Vees الذكي">
@@ -4573,11 +4777,11 @@
                                 </div>
                             </a>
 
-                            <a href="mailto:info@vees-tech.com" class="contact-method" itemprop="email">
+                            <a href="mailto:vees.sd.agency@gmail.com" class="contact-method" itemprop="email">
                                 <div class="method-icon"><i class="fas fa-envelope"></i></div>
                                 <div class="method-details">
                                     <h4 data-key="method_email">البريد الإلكتروني</h4>
-                                    <span>info@vees-tech.com</span>
+                                    <span>vees.sd.agency@gmail.com</span>
                                 </div>
                             </a>
 
@@ -4665,7 +4869,7 @@
                 
                 <div class="social-links">
                     <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" aria-label="Facebook" itemprop="sameAs" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/mazen-alqayser" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" itemprop="sameAs" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" itemprop="sameAs" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" aria-label="GitHub" itemprop="sameAs" class="social-link"><i class="fab fa-github"></i></a>
                     <a href="https://t.me/vees_agency_bot" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="social-link"><i class="fab fa-telegram"></i></a>
                     <a href="https://wa.me/201124592083" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
@@ -4697,20 +4901,21 @@
             <div class="footer-column">
                 <h4 data-key="footer_resources_title">موارد</h4>
                 <nav class="footer-links" aria-label="روابط الموارد">
-                    <a href="#" class="footer-link" data-key="footer_link_blog"><i class="fas fa-chevron-left"></i> المدونة</a>
-                    <a href="#" class="footer-link" data-key="footer_link_case"><i class="fas fa-chevron-left"></i> دراسات حالة</a>
-                    <a href="#" class="footer-link" data-key="footer_link_docs"><i class="fas fa-chevron-left"></i> التوثيق</a>
-                    <a href="#" class="footer-link" data-key="footer_link_faq"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a>
-                    <a href="#" class="footer-link" data-key="footer_link_support"><i class="fas fa-chevron-left"></i> الدعم الفني</a>
+                    <a href="#contact" class="footer-link" data-key="footer_link_blog"><i class="fas fa-chevron-left"></i> المدونة</a>
+                    <a href="#contact" class="footer-link" data-key="footer_link_case"><i class="fas fa-chevron-left"></i> دراسات حالة</a>
+                    <a href="#contact" class="footer-link" data-key="footer_link_docs"><i class="fas fa-chevron-left"></i> التوثيق</a>
+                    <a href="#contact" class="footer-link" data-key="footer_link_faq"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a>
+                    <a href="#contact" class="footer-link" data-key="footer_link_support"><i class="fas fa-chevron-left"></i> الدعم الفني</a>
                 </nav>
             </div>
 
             <div class="footer-column">
-                <h4 data-key="footer_newsletter_title">النشرة البريدية</h4>
-                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: var(--space-md);" data-key="newsletter_desc">اشترك للحصول على آخر الأخبار والعروض الحصرية</p>
-                <form class="newsletter-form" action="#" method="POST" id="newsletterForm">
-                    <input type="email" class="newsletter-input" placeholder="بريدك الإلكتروني" required aria-label="البريد الإلكتروني للنشرة البريدية">
-                    <button type="submit" class="newsletter-btn" aria-label="اشتراك">
+                <h4 data-key="footer_complaints_title">الشكاوى والمقترحات</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: var(--space-md);" data-key="footer_complaints_desc">نسعد بتلقي ملاحظاتكم ومقترحاتكم لتحسين خدماتنا</p>
+                <form class="newsletter-form" id="newsletterForm" action="#" method="POST" style="flex-direction: column; gap: var(--space-sm);">
+                    <input type="email" id="complaintEmail" class="newsletter-input" placeholder="بريدك الإلكتروني" required aria-label="البريد الإلكتروني" style="width: 100%;">
+                    <textarea id="complaintMessage" class="newsletter-input" placeholder="اكتب شكواك أو اقتراحك هنا..." required aria-label="الشكوى أو المقترح" style="width: 100%; min-height: 80px; resize: vertical; font-family: inherit; padding: var(--space-sm) var(--space-md);"></textarea>
+                    <button type="submit" class="newsletter-btn" aria-label="إرسال" style="width: 100%;">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
@@ -4866,6 +5071,10 @@
         // =============== TRANSLATIONS DATA ============================
         // ================================================================
         
+        // ================================================================
+        // =============== TRANSLATIONS DATA (COMPLETE) =================
+        // ================================================================
+        
         const translations = {
             ar: {
                 nav_home: 'الرئيسية',
@@ -4884,11 +5093,157 @@
                 btn_telegram: 'تحدث مع البوت',
                 stat_projects: 'مشروع منجز',
                 stat_clients: 'عميل راضٍ',
-                stat_countries: 'دول حول العالم',
+                stat_countries: 'دقه العلم والستجابه مقارنه بالشركات حول العالم',
+                stat_label_projects: 'مشروع منجز',
+                stat_label_clients: 'عميل نشط',
+                stat_label_countries: 'دول حول العالم',
+                stat_label_satisfaction: 'نسبة الرضا',
                 services_subtitle: 'خدماتنا المتميزة',
                 services_title: 'حلول تقنية شاملة لنجاح أعمالك',
                 services_desc: 'نقدم مجموعة متكاملة من الخدمات التقنية والإبداعية المصممة خصيصاً لتلبية احتياجات عملك وتحقيق أهدافك',
-                // ... more translations can be added here
+                service_design_title: 'تصميم الجرافيك',
+                service_design_desc: 'هوية بصرية مبتكرة تعكس قيم علامتك التجارية. تصميم شعارات، بروشورات، بوسترات، ومواد تسويقية احترافية تميزك عن المنافسين.',
+                service_software_title: 'الأنظمة البرمجية',
+                service_software_desc: 'تطوير أنظمة برمجية متكاملة ومخصصة تشمل أنظمة ERP لإدارة الموارد، أنظمة LMS للتعليم الإلكتروني، أنظمة CRM لإدارة العملاء، وحلول الأعمال المتقدمة.',
+                service_automation_title: 'الأوتوميشن الذكي',
+                service_automation_desc: 'أتمتة العمليات التكرارية وتحسين سير العمل. تكامل الأنظمة وتطوير حلول RPA لتوفير الوقت والموارد.',
+                service_analytics_title: 'تحليل البيانات',
+                service_analytics_desc: 'استخراج رؤى قيمة من بياناتك. لوحات تحكم تفاعلية، تقارير ذكية، وتحليلات تنبؤية تدعم قراراتك الاستراتيجية.',
+                service_web_title: 'تصميم المواقع',
+                service_web_desc: 'مواقع ويب عصرية سريعة الاستجابة. تصميم UI/UX احترافي، متاجر إلكترونية، وتطبيقات ويب متقدمة.',
+                service_pos_title: 'أنظمة الكاشير',
+                service_pos_desc: 'أنظمة نقاط البيع المتكاملة للمطاعم والمتاجر. إدارة المخزون، التقارير المالية، وتكامل بوابات الدفع.',
+                service_mobile_title: 'تطبيقات الموبايل',
+                service_mobile_desc: 'تطبيقات iOS و Android أصلية ومتعددة المنصات. تجربة مستخدم سلسة وأداء عالي يحقق أهدافك.',
+                service_it_title: 'البنية التحتية IT',
+                service_it_desc: 'حلول البنية التحتية المتكاملة. إدارة السيرفرات، الحوسبة السحابية، أمن المعلومات، والشبكات.',
+                tag_logos: 'شعارات',
+                tag_branding: 'هوية بصرية',
+                tag_print: 'مطبوعات',
+                tag_custom: 'أنظمة مخصصة',
+                tag_workflows: 'سير العمل',
+                tag_ecommerce: 'متاجر',
+                tag_inventory: 'المخزون',
+                tag_reports: 'التقارير',
+                tag_cloud: 'سحابي',
+                tag_security: 'أمن',
+                link_details: 'عرض التفاصيل',
+                pricing_subtitle: 'عروض حصرية',
+                pricing_title: 'باقات مصممة لاحتياجاتك',
+                pricing_desc: 'اختر الباقة المناسبة لقطاع عملك واستمتع بمزايا حصرية',
+                portfolio_subtitle: 'أعمالنا',
+                portfolio_title: 'مشاريع نفتخر بها',
+                portfolio_desc: 'نماذج من أعمالنا التي حققت نجاحاً لعملائنا في مختلف القطاعات',
+                cat_ecommerce: 'تجارة إلكترونية',
+                proj_mall_name: 'منصة Mall Plus',
+                proj_mall_desc: 'متجر إلكتروني متعدد البائعين مع نظام دفع متكامل وإدارة شحن ذكية',
+                cat_pharmacy: 'نظام صيدلي',
+                proj_pharma_name: 'PharmaCare Pro',
+                proj_pharma_desc: 'نظام إدارة صيدليات متكامل مع تنبيهات التواريخ وتحليل المبيعات',
+                cat_crm: 'إدارة علاقات',
+                proj_crm_name: 'AgencyFlow CRM',
+                proj_crm_desc: 'نظام CRM متقدم للوكالات مع تتبع الحملات والتقارير التفاعلية',
+                cat_lms: 'تعليم إلكتروني',
+                proj_edu_name: 'EduPlatform LMS',
+                proj_edu_desc: 'منصة تعليم إلكتروني تفاعلية مع غرف افتراضية ونظام اختبارات',
+                cat_mobile: 'تطبيق موبايل',
+                proj_app_name: 'DeliveryGo App',
+                proj_app_desc: 'تطبيق توصيل طلبات مع تتبع مباشر ونظام دفع متعدد',
+                cat_analytics: 'تحليل بيانات',
+                proj_analytics_name: 'DataInsight Dashboard',
+                proj_analytics_desc: 'لوحة تحكم تحليلية متقدمة مع رؤى ذكية وتقارير آلية',
+                team_subtitle: 'فريقنا',
+                team_title: 'عقول مبدعة، نتائج استثنائية',
+                team_desc: 'فريق من الخبراء والمحترفين يعملون بشغف لتحقيق رؤيتك',
+                chatbot_subtitle: 'البوت الذكي',
+                chatbot_title: 'Vees Agency Bot',
+                chatbot_desc: 'بوت ذكي على تيليجرام يجيب على استفساراتك ويقدم حلولاً فورية',
+                chatbot_info_title: 'مساعدك الرقمي على مدار الساعة',
+                chatbot_info_desc: 'بوت Vees Agency Bot مصمم لتقديم تجربة خدمة عملاء استثنائية. اسأله عن خدماتنا، احصل على عروض أسعار، أو تواصل مع فريقنا مباشرة.',
+                chatbot_feature_1: 'ردود فورية على مدار 24/7',
+                chatbot_feature_2: 'دعم متعدد اللغات (عربي، إنجليزي)',
+                chatbot_feature_3: 'إنشاء عروض أسعار تلقائية',
+                chatbot_feature_4: 'حجز استشارات مجانية',
+                chatbot_feature_5: 'تتبع حالة مشاريعك',
+                btn_try_bot: 'جرب البوت الآن',
+                analytics_subtitle: 'أداؤنا',
+                analytics_title: 'أرقام تتحدث عن نفسها',
+                analytics_desc: 'نتائج حقيقية حققناها لعملائنا خلال السنوات الماضية',
+                chart_growth_title: 'نمو المشاريع السنوي',
+                pie_total_label: 'مشروع',
+                legend_design: 'تصميم (35%)',
+                legend_software: 'برمجيات (30%)',
+                legend_web: 'مواقع (20%)',
+                legend_other: 'أخرى (15%)',
+                testimonials_subtitle: 'آراء العملاء',
+                testimonials_title: 'ماذا يقول عملاؤنا عنا',
+                testimonials_desc: 'ثقة العملاء هي أثمن ما نملك',
+                contact_subtitle: 'تواصل معنا',
+                contact_title: 'لنبني شيئاً عظيماً معاً',
+                contact_desc: 'نحن هنا لمساعدتك. تواصل معنا وابدأ رحلتك نحو التحول الرقمي',
+                contact_info_title: 'معلومات التواصل',
+                contact_info_desc: 'اختر الطريقة المناسبة لك للتواصل معنا. نرد على جميع الاستفسارات خلال 24 ساعة.',
+                method_phone: 'اتصل بنا',
+                method_email: 'البريد الإلكتروني',
+                method_whatsapp: 'واتساب',
+                whatsapp_hint: 'رد سريع خلال دقائق',
+                method_telegram: 'تيليجرام',
+                method_location: 'الموقع',
+                label_name: 'الاسم الكامل *',
+                label_email: 'البريد الإلكتروني *',
+                label_phone: 'رقم الهاتف',
+                label_service: 'الخدمة المطلوبة',
+                select_service: 'اختر الخدمة',
+                opt_design: 'تصميم الجرافيك',
+                opt_software: 'أنظمة برمجية',
+                opt_web: 'تصميم مواقع',
+                opt_mobile: 'تطبيقات موبايل',
+                opt_automation: 'أوتوميشن',
+                opt_analytics: 'تحليل بيانات',
+                opt_other: 'أخرى',
+                message_label: 'رسالتك *',
+                btn_send: 'إرسال الرسالة',
+                footer_brand_desc: 'شركة تقنية رائدة في انتاج الحلول الرقمه المتقدمه. نقدم حلولاً رقمية متكاملة تساعد الشركات والأفراد على النجاح في العالم الرقمي.',
+                footer_services_title: 'خدماتنا',
+                footer_link_design: 'تصميم جرافيك',
+                footer_link_software: 'أنظمة برمجية',
+                footer_link_web: 'تصميم مواقع',
+                footer_link_mobile: 'تطبيقات موبايل',
+                footer_link_automation: 'أوتوميشن',
+                footer_company_title: 'الشركة',
+                footer_link_about: 'من نحن',
+                footer_link_portfolio: 'أعمالنا',
+                footer_link_team: 'فريقنا',
+                footer_link_pricing: 'الأسعار',
+                footer_link_contact: 'تواصل معنا',
+                footer_resources_title: 'موارد',
+                footer_link_blog: 'المدونة',
+                footer_link_case: 'دراسات حالة',
+                footer_link_docs: 'التوثيق',
+                footer_link_faq: 'الأسئلة الشائعة',
+                footer_link_support: 'الدعم الفني',
+                footer_complaints_title: 'الشكاوى والمقترحات',
+                footer_complaints_desc: 'نسعد بتلقي ملاحظاتكم ومقترحاتكم لتحسين خدماتنا',
+                footer_certifications: 'الشهادات',
+                copyright_text: 'جميع الحقوق محفوظة. صُمم بتقنية \u2764\uFE0F بواسطة',
+                telegram_tooltip: 'تحدث مع البوت الذكي',
+                codebot_tooltip: 'مولد الأكواد الذكي',
+                codebot_modal_title: 'مولد الأكواد الذكي',
+                codebot_modal_desc: 'اكتب وصفاً للميزة التي تريدها وسنولد لك الكود تلقائياً',
+                btn_generate: 'توليد الكود',
+                btn_clear: 'مسح',
+                btn_copy: 'نسخ الكود',
+                welcome_title: 'مرحباً بك في Vees Technologies!',
+                welcome_text: 'نحن سعداء بزيارتك لموقعنا. شركة تقنية رائدة أسسها مازن القيصر، متخصصون في تقديم حلول رقمية متكاملة تساعد أعمالك على النمو والتميز.',
+                offer_title: '🎁 عرض خاص للزوار الجدد',
+                offer_desc: 'احصل على استشارة مجانية + خصم 15% على أول مشروعك معنا!',
+                btn_claim_offer: 'اطلب العرض الآن',
+                btn_explore_site: 'استكشف الموقع',
+                service_modal_default_title: 'تفاصيل الخدمة',
+                service_modal_default_desc: 'معلومات مفصلة عن هذه الخدمة',
+                service_features_title: 'ماذا تشمل هذه الخدمة:',
+                btn_request_quote: 'اطلب عرض سعر',
+                btn_close: 'إغلاق'
             },
             en: {
                 nav_home: 'Home',
@@ -4902,15 +5257,162 @@
                 hero_badge: 'We Build The Digital Future',
                 hero_title_1: 'Transform Your Ideas Into',
                 hero_title_2: 'Integrated Smart Systems',
-                hero_desc: 'Leading technology company founded by Mazen Al-Qayser. Specialists in graphic design, software development, smart automation, data analytics, POS systems, and web design.',
+                hero_desc: 'Leading technology company founded by Mazen Al-Qayser. Specialists in graphic design, software development, smart automation, data analytics, POS systems, and web design. We provide innovative tech solutions that drive your business toward success.',
                 btn_explore: 'Explore Our Services',
                 btn_telegram: 'Talk to the Bot',
                 stat_projects: 'Projects Completed',
                 stat_clients: 'Happy Clients',
-                stat_countries: 'Countries Worldwide',
+                stat_countries: 'Response Accuracy Compared to Global Companies',
+                stat_label_projects: 'Projects Completed',
+                stat_label_clients: 'Active Clients',
+                stat_label_countries: 'Countries Worldwide',
+                stat_label_satisfaction: 'Satisfaction Rate',
                 services_subtitle: 'Our Premium Services',
                 services_title: 'Comprehensive Tech Solutions For Your Business Success',
-                services_desc: 'We offer an integrated suite of technical and creative services designed specifically to meet your business needs and achieve your goals'
+                services_desc: 'We offer an integrated suite of technical and creative services designed specifically to meet your business needs and achieve your goals',
+                service_design_title: 'Graphic Design',
+                service_design_desc: 'Innovative visual identity that reflects your brand values. Logo design, brochures, posters, and professional marketing materials.',
+                service_software_title: 'Software Systems',
+                service_software_desc: 'Custom integrated software systems including ERP, LMS, CRM, and advanced business solutions.',
+                service_automation_title: 'Smart Automation',
+                service_automation_desc: 'Automate repetitive processes and improve workflows. System integration and RPA solutions.',
+                service_analytics_title: 'Data Analytics',
+                service_analytics_desc: 'Extract valuable insights from your data. Interactive dashboards, smart reports, and predictive analytics.',
+                service_web_title: 'Web Development',
+                service_web_desc: 'Modern responsive websites. Professional UI/UX design, e-commerce stores, and advanced web applications.',
+                service_pos_title: 'POS Systems',
+                service_pos_desc: 'Integrated POS systems for restaurants and stores. Inventory management, financial reports, and payment gateway integration.',
+                service_mobile_title: 'Mobile Apps',
+                service_mobile_desc: 'Native and cross-platform iOS & Android apps. Smooth UX and high performance.',
+                service_it_title: 'IT Infrastructure',
+                service_it_desc: 'Integrated infrastructure solutions. Server management, cloud computing, information security, and networking.',
+                tag_logos: 'Logos',
+                tag_branding: 'Branding',
+                tag_print: 'Print',
+                tag_custom: 'Custom Systems',
+                tag_workflows: 'Workflows',
+                tag_ecommerce: 'E-commerce',
+                tag_inventory: 'Inventory',
+                tag_reports: 'Reports',
+                tag_cloud: 'Cloud',
+                tag_security: 'Security',
+                link_details: 'View Details',
+                pricing_subtitle: 'Exclusive Offers',
+                pricing_title: 'Packages Designed For Your Needs',
+                pricing_desc: 'Choose the right package for your business sector and enjoy exclusive benefits',
+                portfolio_subtitle: 'Our Work',
+                portfolio_title: 'Projects We Are Proud Of',
+                portfolio_desc: 'Examples of our work that achieved success for our clients across different sectors',
+                cat_ecommerce: 'E-commerce',
+                proj_mall_name: 'Mall Plus Platform',
+                proj_mall_desc: 'Multi-vendor e-commerce store with integrated payment and smart shipping management',
+                cat_pharmacy: 'Pharmacy System',
+                proj_pharma_name: 'PharmaCare Pro',
+                proj_pharma_desc: 'Integrated pharmacy management system with expiry alerts and sales analytics',
+                cat_crm: 'CRM',
+                proj_crm_name: 'AgencyFlow CRM',
+                proj_crm_desc: 'Advanced CRM for agencies with campaign tracking and interactive reports',
+                cat_lms: 'E-learning',
+                proj_edu_name: 'EduPlatform LMS',
+                proj_edu_desc: 'Interactive e-learning platform with virtual rooms and testing system',
+                cat_mobile: 'Mobile App',
+                proj_app_name: 'DeliveryGo App',
+                proj_app_desc: 'Delivery app with live tracking and multiple payment methods',
+                cat_analytics: 'Data Analytics',
+                proj_analytics_name: 'DataInsight Dashboard',
+                proj_analytics_desc: 'Advanced analytics dashboard with smart insights and automated reports',
+                team_subtitle: 'Our Team',
+                team_title: 'Creative Minds, Exceptional Results',
+                team_desc: 'A team of experts and professionals working with passion to achieve your vision',
+                chatbot_subtitle: 'Smart Bot',
+                chatbot_title: 'Vees Agency Bot',
+                chatbot_desc: 'A smart Telegram bot that answers your inquiries and provides instant solutions',
+                chatbot_info_title: 'Your Digital Assistant 24/7',
+                chatbot_info_desc: 'Vees Agency Bot is designed to provide exceptional customer service. Ask about our services, get quotes, or connect with our team directly.',
+                chatbot_feature_1: 'Instant responses 24/7',
+                chatbot_feature_2: 'Multi-language support (Arabic, English)',
+                chatbot_feature_3: 'Automatic quote generation',
+                chatbot_feature_4: 'Free consultation booking',
+                chatbot_feature_5: 'Project status tracking',
+                btn_try_bot: 'Try the Bot Now',
+                analytics_subtitle: 'Our Performance',
+                analytics_title: 'Numbers That Speak For Themselves',
+                analytics_desc: 'Real results we achieved for our clients over the past years',
+                chart_growth_title: 'Annual Project Growth',
+                pie_total_label: 'Projects',
+                legend_design: 'Design (35%)',
+                legend_software: 'Software (30%)',
+                legend_web: 'Websites (20%)',
+                legend_other: 'Other (15%)',
+                testimonials_subtitle: 'Client Testimonials',
+                testimonials_title: 'What Our Clients Say About Us',
+                testimonials_desc: 'Client trust is our most valuable asset',
+                contact_subtitle: 'Contact Us',
+                contact_title: 'Let\'s Build Something Great Together',
+                contact_desc: 'We\'re here to help. Contact us and start your digital transformation journey',
+                contact_info_title: 'Contact Information',
+                contact_info_desc: 'Choose your preferred way to reach us. We respond to all inquiries within 24 hours.',
+                method_phone: 'Call Us',
+                method_email: 'Email',
+                method_whatsapp: 'WhatsApp',
+                whatsapp_hint: 'Quick response within minutes',
+                method_telegram: 'Telegram',
+                method_location: 'Location',
+                label_name: 'Full Name *',
+                label_email: 'Email Address *',
+                label_phone: 'Phone Number',
+                label_service: 'Required Service',
+                select_service: 'Select Service',
+                opt_design: 'Graphic Design',
+                opt_software: 'Software Systems',
+                opt_web: 'Web Development',
+                opt_mobile: 'Mobile Apps',
+                opt_automation: 'Automation',
+                opt_analytics: 'Data Analytics',
+                opt_other: 'Other',
+                message_label: 'Your Message *',
+                btn_send: 'Send Message',
+                footer_brand_desc: 'A leading technology company in advanced digital solutions. We provide integrated digital solutions that help companies and individuals succeed in the digital world.',
+                footer_services_title: 'Services',
+                footer_link_design: 'Graphic Design',
+                footer_link_software: 'Software Systems',
+                footer_link_web: 'Web Development',
+                footer_link_mobile: 'Mobile Apps',
+                footer_link_automation: 'Automation',
+                footer_company_title: 'Company',
+                footer_link_about: 'About Us',
+                footer_link_portfolio: 'Portfolio',
+                footer_link_team: 'Our Team',
+                footer_link_pricing: 'Pricing',
+                footer_link_contact: 'Contact Us',
+                footer_resources_title: 'Resources',
+                footer_link_blog: 'Blog',
+                footer_link_case: 'Case Studies',
+                footer_link_docs: 'Documentation',
+                footer_link_faq: 'FAQ',
+                footer_link_support: 'Technical Support',
+                footer_complaints_title: 'Complaints & Suggestions',
+                footer_complaints_desc: 'We welcome your feedback and suggestions to improve our services',
+                footer_certifications: 'Certifications',
+                copyright_text: 'All rights reserved. Built with \u2764\uFE0F by',
+                telegram_tooltip: 'Talk to the Smart Bot',
+                codebot_tooltip: 'Smart Code Generator',
+                codebot_modal_title: 'Smart Code Generator',
+                codebot_modal_desc: 'Describe the feature you want and we will generate the code automatically',
+                btn_generate: 'Generate Code',
+                btn_clear: 'Clear',
+                btn_copy: 'Copy Code',
+                welcome_title: 'Welcome to Vees Technologies!',
+                welcome_text: "We\'re happy to have you visit our site. A leading tech company founded by Mazen Al-Qayser, specializing in integrated digital solutions that help your business grow and excel.",
+                offer_title: '\uD83C\uDF81 Special Offer for New Visitors',
+                offer_desc: 'Get a free consultation + 15% discount on your first project with us!',
+                btn_claim_offer: 'Claim the Offer Now',
+                btn_explore_site: 'Explore the Site',
+                service_modal_default_title: 'Service Details',
+                service_modal_default_desc: 'Detailed information about this service',
+                service_features_title: 'What this service includes:',
+                btn_request_quote: 'Request a Quote',
+                btn_close: 'Close'
             }
         };
 
@@ -5231,6 +5733,10 @@
             applyTranslations(currentLang);
         }
 
+        // ================================================================
+        // =============== APPLY TRANSLATIONS ============================
+        // ================================================================
+        
         function applyTranslations(lang) {
             const elements = $$('[data-key]');
             elements.forEach(el => {
@@ -5239,6 +5745,54 @@
                     el.textContent = translations[lang][key];
                 }
             });
+
+            // Fix arrow directions based on language (MOD 9)
+            // When English: arrows should point right (→), chevrons should point right
+            // When Arabic: arrows should point left (←), chevrons should point left
+            const arrowIcons = $$('.fa-arrow-left, .fa-arrow-right');
+            arrowIcons.forEach(icon => {
+                if (lang === 'en') {
+                    if (icon.classList.contains('fa-arrow-left')) {
+                        icon.classList.remove('fa-arrow-left');
+                        icon.classList.add('fa-arrow-right');
+                    }
+                } else {
+                    if (icon.classList.contains('fa-arrow-right')) {
+                        icon.classList.remove('fa-arrow-right');
+                        icon.classList.add('fa-arrow-left');
+                    }
+                }
+            });
+
+            const chevronIcons = $$('.fa-chevron-left, .fa-chevron-right');
+            chevronIcons.forEach(icon => {
+                if (lang === 'en') {
+                    if (icon.classList.contains('fa-chevron-left')) {
+                        icon.classList.remove('fa-chevron-left');
+                        icon.classList.add('fa-chevron-right');
+                    }
+                } else {
+                    if (icon.classList.contains('fa-chevron-right')) {
+                        icon.classList.remove('fa-chevron-right');
+                        icon.classList.add('fa-chevron-left');
+                    }
+                }
+            });
+
+            // Update document title and meta description for SEO (MOD 6)
+            if (lang === 'en') {
+                document.title = 'Vees Technologies | Leading Tech Company - Graphic Design, Software Systems, Smart Automation, AI';
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute('content', 'Vees Technologies - Leading tech company founded by Mazen Al-Qayser. Specialists in graphic design, software development (ERP, CRM, LMS, POS), smart automation, data analytics, web development, and mobile apps. Integrated tech solutions for agencies, pharmacies, and startups.');
+                }
+            } else {
+                document.title = 'Vees Technologies | شركة التقنية الرائدة - تصميم الجرافيك، الأنظمة البرمجية، الأوتوميشن، الذكاء الاصطناعي';
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute('content', 'Vees Technologies - شركة تقنية رائدة أسسها مازن القيصر. متخصصون في تصميم الجرافيك، تطوير الأنظمة البرمجية (ERP, CRM, LMS, POS)، الأوتوميشن الذكي، تحليل البيانات، أنظمة الكاشير، تطبيقات الموبايل، وتصميم المواقع الإلكترونية. حلول تقنية متكاملة للوكالات والصيدليات والشركات الناشئة.');
+                }
+            }
         }
 
         function toggleTheme() {
@@ -5710,15 +6264,29 @@ module.exports = { initializeFeature, processRequest };`;
                 });
             }
 
+            // ================================================================
+            // =============== COMPLAINTS FORM HANDLER =====================
+            // ================================================================
+            
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const input = newsletterForm.querySelector('input');
+                    const emailInput = document.getElementById('complaintEmail');
+                    const messageInput = document.getElementById('complaintMessage');
                     const btn = newsletterForm.querySelector('button');
                     
-                    if (input && input.value) {
+                    if (emailInput && messageInput && emailInput.value && messageInput.value) {
+                        // Open mailto link with the complaint/suggestion
+                        const subject = encodeURIComponent(currentLang === 'ar' ? 'شكوى / اقتراح من الموقع' : 'Complaint / Suggestion from Website');
+                        const body = encodeURIComponent(
+                            (currentLang === 'ar' ? 'البريد: ' : 'Email: ') + emailInput.value + '\n\n' +
+                            (currentLang === 'ar' ? 'الرسالة: ' : 'Message: ') + messageInput.value
+                        );
+                        window.open('mailto:vees.sd.agency@gmail.com?subject=' + subject + '&body=' + body);
+                        
                         btn.innerHTML = '<i class="fas fa-check"></i>';
-                        input.value = '';
+                        emailInput.value = '';
+                        messageInput.value = '';
                         
                         setTimeout(() => {
                             btn.innerHTML = '<i class="fas fa-paper-plane"></i>';
@@ -5732,22 +6300,31 @@ module.exports = { initializeFeature, processRequest };`;
         // =============== SMOOTH SCROLL ==================================
         // ================================================================
 
+        // ================================================================
+        // =============== SMOOTH SCROLL NAVIGATION ======================
+        // ================================================================
+        
         function initSmoothScroll() {
             $$('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
+                    if (!targetId || targetId === '#') return;
+                    
                     const targetElement = $(targetId);
                     
                     if (targetElement) {
+                        // Close mobile menu if open
                         closeMobileMenu();
                         closeAllModals();
                         
-                        const offsetTop = targetElement.offsetTop - 80;
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
+                        // Use scrollIntoView with smooth behavior for better RTL support
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 100);
                     }
                 });
             });
