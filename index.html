@@ -4009,364 +4009,620 @@
                 </div>
             </div>
         </section>
+
+        
 <!-- ==================== TEAM SECTION ==================== -->
-<section class="team-section section-padding" id="team" aria-label="فريق العمل">
-    <style>
-        .team-section .team-marquee-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-        }
+<section class="team-section" id="team" dir="rtl" aria-label="فريق العمل — Our Team">
 
-        .team-section .team-marquee {
-            display: flex;
-            width: max-content;
-            animation: team-infinite-scroll 50s linear infinite;
-            will-change: transform;
-        }
+  <style>
+    /* ═══════════════ CSS Variables — Light Mode (Default) ═══════════════ */
+    :root {
+      --team-bg: #ffffff;
+      --team-bg-subtle: #f8f8f8;
+      --team-text: #111111;
+      --team-text-secondary: #666666;
+      --team-text-muted: #999999;
+      --team-border: rgba(0, 0, 0, 0.08);
+      --team-border-hover: rgba(0, 0, 0, 0.15);
+      --team-card-bg: #ffffff;
+      --team-card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      --team-card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.1);
+      --team-pill-bg: #f0f0f0;
+      --team-pill-border: rgba(0, 0, 0, 0.06);
+      --team-skill-bg: #f0f0f0;
+      --team-skill-text: #333333;
+      --team-social-bg: #f5f5f5;
+      --team-social-border: rgba(0, 0, 0, 0.08);
+      --team-social-color: #666666;
+      --team-social-hover-bg: #e8e8e8;
+      --team-divider: rgba(0, 0, 0, 0.08);
+      --team-glow-amber: rgba(245, 158, 11, 0.08);
+      --team-glow-emerald: rgba(16, 185, 129, 0.08);
+      --team-glow-violet: rgba(139, 92, 246, 0.08);
+      --team-avatar-ring-inner: #ffffff;
+    }
 
-        .team-section .team-marquee:hover {
-            animation-play-state: resume;
-        }
+    /* ═══════════════ Dark Mode ═══════════════ */
+    .dark .team-section,
+    .team-section.dark-mode {
+      --team-bg: #0a0a0a;
+      --team-bg-subtle: #111111;
+      --team-text: #f0f0f0;
+      --team-text-secondary: #a0a0a0;
+      --team-text-muted: #666666;
+      --team-border: rgba(255, 255, 255, 0.06);
+      --team-border-hover: rgba(255, 255, 255, 0.12);
+      --team-card-bg: #141414;
+      --team-card-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      --team-card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.5);
+      --team-pill-bg: #1a1a1a;
+      --team-pill-border: rgba(255, 255, 255, 0.06);
+      --team-skill-bg: #1e1e1e;
+      --team-skill-text: #d0d0d0;
+      --team-social-bg: #1a1a1a;
+      --team-social-border: rgba(255, 255, 255, 0.08);
+      --team-social-color: #888888;
+      --team-social-hover-bg: #252525;
+      --team-divider: rgba(255, 255, 255, 0.06);
+      --team-glow-amber: rgba(245, 158, 11, 0.12);
+      --team-glow-emerald: rgba(16, 185, 129, 0.12);
+      --team-glow-violet: rgba(139, 92, 246, 0.12);
+      --team-avatar-ring-inner: #0a0a0a;
+    }
 
-        @keyframes team-infinite-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+    @media (prefers-color-scheme: dark) {
+      .team-section {
+        --team-bg: #0a0a0a;
+        --team-bg-subtle: #111111;
+        --team-text: #f0f0f0;
+        --team-text-secondary: #a0a0a0;
+        --team-text-muted: #666666;
+        --team-border: rgba(255, 255, 255, 0.06);
+        --team-border-hover: rgba(255, 255, 255, 0.12);
+        --team-card-bg: #141414;
+        --team-card-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        --team-card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.5);
+        --team-pill-bg: #1a1a1a;
+        --team-pill-border: rgba(255, 255, 255, 0.06);
+        --team-skill-bg: #1e1e1e;
+        --team-skill-text: #d0d0d0;
+        --team-social-bg: #1a1a1a;
+        --team-social-border: rgba(255, 255, 255, 0.08);
+        --team-social-color: #888888;
+        --team-social-hover-bg: #252525;
+        --team-divider: rgba(255, 255, 255, 0.06);
+        --team-glow-amber: rgba(245, 158, 11, 0.12);
+        --team-glow-emerald: rgba(16, 185, 129, 0.12);
+        --team-glow-violet: rgba(139, 92, 246, 0.12);
+        --team-avatar-ring-inner: #0a0a0a;
+      }
+    }
 
-        .team-section .team-member {
-            flex: 0 0 280px;
-            max-width: 280px;
-            margin-inline-end: 24px;
-        }
+    /* ═══════════════ Section Base ═══════════════ */
+    .team-section {
+      background: var(--team-bg);
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Noto Sans Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        @media (min-width: 1400px) {
-            .team-section .team-member {
-                flex: 0 0 310px;
-                max-width: 310px;
-                margin-inline-end: 28px;
-            }
-            .team-section .team-marquee {
-                animation-duration: 70s;
-            }
-        }
+    .team-section * {
+      box-sizing: border-box;
+    }
 
-        @media (max-width: 768px) {
-            .team-section .team-member {
-                flex: 0 0 230px;
-                max-width: 230px;
-                margin-inline-end: 16px;
-                padding: 22px 14px;
-            }
-            .team-section .team-marquee {
-                animation-duration: 50s;
-            }
-            .team-section .member-avatar-wrapper {
-                width: 80px;
-                height: 80px;
-            }
-            .team-section .member-avatar {
-                width: 80px;
-                height: 80px;
-                font-size: 1.5rem;
-            }
-            .team-section .member-name {
-                font-size: 1rem;
-            }
-            .team-section .member-role {
-                font-size: 0.75rem;
-            }
-            .team-section .member-skill {
-                font-size: 0.65rem;
-                padding: 2px 8px;
-            }
-        }
+    /* ═══════════════ Header ═══════════════ */
+    .team-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
 
-        @media (max-width: 480px) {
-            .team-section .team-member {
-                flex: 0 0 200px;
-                max-width: 200px;
-                margin-inline-end: 12px;
-                padding: 18px 12px;
-            }
-            .team-section .team-marquee {
-                animation-duration: 45s;
-            }
-            .team-section .member-avatar-wrapper {
-                width: 68px;
-                height: 68px;
-            }
-            .team-section .member-avatar {
-                width: 68px;
-                height: 68px;
-                font-size: 1.3rem;
-            }
-            .team-section .member-name {
-                font-size: 0.9rem;
-            }
-            .team-section .member-role {
-                font-size: 0.7rem;
-            }
-            .team-section .member-skills {
-                gap: 4px;
-            }
-            .team-section .member-skill {
-                font-size: 0.6rem;
-                padding: 2px 6px;
-            }
-        }
-    </style>
+    .team-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 20px;
+      border-radius: 100px;
+      background: var(--team-pill-bg);
+      border: 1px solid var(--team-pill-border);
+      font-size: 13px;
+      color: var(--team-text-muted);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
 
-    <div class="container">
-        <div class="section-header">
-            <span class="section-subtitle reveal" data-key="team_subtitle">فريقنا</span>
-            <h2 class="section-title reveal stagger-1" data-key="team_title">عقول مبدعة، نتائج استثنائية</h2>
-            <p class="section-description reveal stagger-2" data-key="team_desc">فريق من الخبراء والمحترفين يعملون بشغف لتحقيق رؤيتك</p>
-        </div>
+    .team-pill svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.6;
+    }
+
+    .team-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--team-text);
+      margin: 0 0 14px 0;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .team-desc {
+      font-size: 15px;
+      color: var(--team-text-secondary);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .team-desc-en {
+      font-size: 13px;
+      color: var(--team-text-muted);
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* ═══════════════ Grid Container — Always ONE ROW ═══════════════ */
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .team-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ═══════════════ Card ═══════════════ */
+    .team-card {
+      flex: 0 0 320px;
+      max-width: 320px;
+      background: var(--team-card-bg);
+      border: 1px solid var(--team-border);
+      border-radius: 20px;
+      padding: 36px 28px 32px;
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.4s ease;
+      box-shadow: var(--team-card-shadow);
+      position: relative;
+      scroll-snap-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--team-card-shadow-hover);
+    }
+
+    /* Per-card accent on hover */
+    .team-card[data-accent="amber"]:hover { border-color: rgba(245, 158, 11, 0.3); }
+    .team-card[data-accent="emerald"]:hover { border-color: rgba(16, 185, 129, 0.3); }
+    .team-card[data-accent="violet"]:hover { border-color: rgba(139, 92, 246, 0.3); }
+
+    /* ═══════════════ Avatar ═══════════════ */
+    .team-avatar-wrap {
+      position: relative;
+      width: 108px;
+      height: 108px;
+      margin: 0 auto 20px auto;
+    }
+
+    .team-avatar-glow {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      opacity: 0.6;
+      transition: opacity 0.5s ease;
+      filter: blur(14px);
+    }
+
+    .team-card:hover .team-avatar-glow { opacity: 1; }
+
+    .team-avatar-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 3px;
+    }
+
+    .team-avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--team-avatar-ring-inner);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .team-avatar-initials {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--team-text);
+      user-select: none;
+      line-height: 1;
+    }
+
+    /* ═══════════════ Name ═══════════════ */
+    .team-name-ar {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--team-text);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .team-name-en {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--team-text-muted);
+      margin: 3px 0 0 0;
+      letter-spacing: 0.03em;
+    }
+
+    /* ═══════════════ Divider ═══════════════ */
+    .team-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .team-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--team-divider);
+    }
+
+    .team-divider-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .team-divider-dot.amber { background: #f59e0b; }
+    .team-divider-dot.emerald { background: #10b981; }
+    .team-divider-dot.violet { background: #8b5cf6; }
+
+    /* ═══════════════ Role ═══════════════ */
+    .team-role-ar {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .team-role-ar.amber { color: #f59e0b; }
+    .team-role-ar.emerald { color: #10b981; }
+    .team-role-ar.violet { color: #8b5cf6; }
+
+    .team-role-en {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--team-text-muted);
+      margin: 2px 0 0 0;
+    }
+
+    /* ═══════════════ Skills ═══════════════ */
+    .team-skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 16px 0 20px;
+    }
+
+    .team-skill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: var(--team-skill-bg);
+      color: var(--team-skill-text);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    /* ═══════════════ Socials ═══════════════ */
+    .team-socials {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .team-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--team-social-bg);
+      border: 1px solid var(--team-social-border);
+      color: var(--team-social-color);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .team-social-link:hover {
+      background: var(--team-social-hover-bg);
+      color: var(--team-text);
+      transform: scale(1.12);
+    }
+
+    .team-social-link i,
+    .team-social-link svg {
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ═══════════════ Background Accents ═══════════════ */
+    .team-bg-glow {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+    }
+
+    .team-bg-glow.top {
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: var(--team-glow-amber);
+    }
+
+    .team-bg-glow.bottom {
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 250px;
+      background: var(--team-glow-emerald);
+    }
+
+    .team-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ═══════════════ Responsive — Large Desktop ═══════════════ */
+    @media (min-width: 1280px) {
+      .team-section { padding: 100px 40px; }
+      .team-card { flex: 0 0 360px; max-width: 360px; padding: 40px 32px 36px; }
+      .team-avatar-wrap { width: 120px; height: 120px; }
+      .team-title { font-size: 38px; }
+      .team-name-ar { font-size: 22px; }
+    }
+
+    /* ═══════════════ Responsive — Tablet ═══════════════ */
+    @media (max-width: 1024px) {
+      .team-section { padding: 64px 20px; }
+      .team-card { flex: 0 0 290px; max-width: 290px; padding: 32px 24px 28px; }
+      .team-avatar-wrap { width: 96px; height: 96px; }
+      .team-name-ar { font-size: 18px; }
+      .team-title { font-size: 28px; }
+      .team-header { margin-bottom: 44px; }
+    }
+
+    /* ═══════════════ Responsive — Mobile (still ONE ROW — scrollable) ═══════════════ */
+    @media (max-width: 768px) {
+      .team-section { padding: 48px 16px; }
+      .team-grid {
+        justify-content: flex-start;
+        gap: 16px;
+        padding: 0 8px 12px 8px;
+      }
+      .team-card {
+        flex: 0 0 260px;
+        max-width: 260px;
+        padding: 28px 20px 24px;
+        border-radius: 16px;
+      }
+      .team-avatar-wrap { width: 84px; height: 84px; }
+      .team-avatar-initials { font-size: 1.6rem; }
+      .team-name-ar { font-size: 17px; }
+      .team-name-en { font-size: 12px; }
+      .team-role-ar { font-size: 12px; }
+      .team-role-en { font-size: 10.5px; }
+      .team-skill { font-size: 10px; padding: 3px 10px; }
+      .team-social-link { width: 30px; height: 30px; font-size: 12px; }
+      .team-title { font-size: 24px; }
+      .team-desc { font-size: 14px; }
+      .team-header { margin-bottom: 36px; }
+    }
+
+    /* ═══════════════ Responsive — Small Mobile ═══════════════ */
+    @media (max-width: 480px) {
+      .team-section { padding: 40px 12px; }
+      .team-card {
+        flex: 0 0 230px;
+        max-width: 230px;
+        padding: 24px 16px 20px;
+        gap: 14px;
+      }
+      .team-avatar-wrap { width: 72px; height: 72px; margin-bottom: 16px; }
+      .team-avatar-initials { font-size: 1.4rem; }
+      .team-name-ar { font-size: 15px; }
+      .team-name-en { font-size: 11px; }
+      .team-role-ar { font-size: 11px; }
+      .team-role-en { font-size: 10px; }
+      .team-skill { font-size: 9.5px; padding: 2px 8px; }
+      .team-divider { margin: 10px 0; }
+      .team-skills { margin: 12px 0 16px; }
+      .team-social-link { width: 28px; height: 28px; }
+      .team-title { font-size: 21px; }
+      .team-desc { font-size: 13px; }
+      .team-pill { font-size: 12px; padding: 5px 14px; }
+    }
+  </style>
+
+  <!-- Background Glows -->
+  <div class="team-bg-glow top"></div>
+  <div class="team-bg-glow bottom"></div>
+
+  <div class="team-content">
+    <!-- ═══════ Header ═══════ -->
+    <div class="team-header">
+      <div class="team-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+        <span>فريقنا — Our Team</span>
+      </div>
+      <h2 class="team-title">عقول مبدعة، نتائج استثنائية</h2>
+      <p class="team-desc">
+        فريق من الخبراء والمحترفين يعملون بشغف لتحقيق رؤيتك
+        <span class="team-desc-en">A team of experts working passionately to realize your vision</span>
+      </p>
     </div>
 
-    <div class="team-marquee-container">
-        <div class="team-marquee">
-            <!-- ===== المجموعة الأولى ===== -->
-            <!-- العضو 1 - مازن القيصر - المؤسس ومطور برمجيات وذكاء اصطناعي -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <img src="https://avatars.githubusercontent.com/u/118674099?v=4" alt="مازن القيصر - المؤسس ومطور برمجيات وذكاء اصطناعي" class="member-avatar" itemprop="image" loading="lazy">
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">مازن القيصر</h4>
-                <span class="member-role" itemprop="jobTitle">المؤسس ومطور برمجيات وذكاء اصطناعي</span>
-                <div class="member-skills">
-                    <span class="member-skill">Full Stack</span>
-                    <span class="member-skill">AI/ML</span>
-                    <span class="member-skill">System Design</span>
-                </div>
-                <div class="member-socials">
-                    <a href="https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                    <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
-                </div>
+    <!-- ═══════ Grid — Always ONE ROW ═══════ -->
+    <div class="team-grid">
+
+      <!-- ══════════ MEMBER 1: مازن القيصر ══════════ -->
+      <div class="team-card" data-accent="amber" itemscope itemtype="https://schema.org/Person">
+        <!-- Avatar -->
+        <div class="team-avatar-wrap">
+          <div class="team-avatar-glow" style="background: linear-gradient(135deg, #fbbf24, #f97316, #ef4444);"></div>
+          <div class="team-avatar-ring" style="background: linear-gradient(135deg, #fbbf24, #f97316, #ef4444);">
+            <div class="team-avatar-inner">
+              <img src="https://media.licdn.com/dms/image/v2/D4D03AQFS7ACnuuhV7Q/profile-displayphoto-crop_800_800/B4DZxGTknaJwAI-/0/1770706068638?e=1779926400&v=beta&t=kMp7pM_AYbl4jvdF3PggH0cOcjZhEXFf8B8D9BjIL4k" alt="مازن القيصر" itemprop="image" loading="lazy">
             </div>
-
-            <!-- العضو 2 - مدثر الهادي - جرافيك ديزاين -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">مﻫ</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">مدثر الهادي</h4>
-                <span class="member-role" itemprop="jobTitle">جرافيك ديزاين</span>
-                <div class="member-skills">
-                    <span class="member-skill">Graphic Design</span>
-                    <span class="member-skill">UI/UX</span>
-                    <span class="member-skill">Branding</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.behance.net/Mudther_Alhadi" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="member-social"><i class="fab fa-behance"></i></a>
-                    <a href="#" aria-label="Dribbble" class="member-social"><i class="fab fa-dribbble"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 3 - سعد اسامه - مطور ذكاء اصطناعي وأوتوميشن -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">سع</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">سعد اسامه</h4>
-                <span class="member-role" itemprop="jobTitle">مطور ذكاء اصطناعي وأوتوميشن</span>
-                <div class="member-skills">
-                    <span class="member-skill">Automation</span>
-                    <span class="member-skill">AI</span>
-                    <span class="member-skill">RPA</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 4 - أ- صلاح - داتا أناليسيس -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-gold)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">صل</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">صلاح الدين عبد العزيز</h4>
-                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
-                <div class="member-skills">
-                    <span class="member-skill">Data Analysis</span>
-                    <span class="member-skill">Power BI</span>
-                    <span class="member-skill">SQL</span>
-                </div>
-                <div class="member-socials">
-                    <a href="https://www.linkedin.com/in/salaheldin-abdoelziz-a3834336a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Kaggle" class="member-social"><i class="fas fa-chart-line"></i></a>
-                </div>
-            </div>
-
-
-            <!-- العضو 5 - نورا - داتا أناليسيس -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, #ff6b9d, var(--brand-blue)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">نو</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">نورا</h4>
-                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
-                <div class="member-skills">
-                    <span class="member-skill">Data Analysis</span>
-                    <span class="member-skill">Python</span>
-                    <span class="member-skill">SQL</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 6 - اسيا مبارك - داتا أناليسيس -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">أس</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">اسيا مبارك</h4>
-                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
-                <div class="member-skills">
-                    <span class="member-skill">Data Analysis</span>
-                    <span class="member-skill">Research</span>
-                    <span class="member-skill">Reporting</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
-
-            <!-- ===== نسخة مكررة للتكرار اللانهائي السلس ===== -->
-            <!-- العضو 1 - مازن القيصر -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <img src="https://avatars.githubusercontent.com/u/118674099?v=4" alt="مازن القيصر - المؤسس ومطور برمجيات وذكاء اصطناعي" class="member-avatar" itemprop="image" loading="lazy">
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">مازن القيصر</h4>
-                <span class="member-role" itemprop="jobTitle">المؤسس ومطور برمجيات وذكاء اصطناعي</span>
-                <div class="member-skills">
-                    <span class="member-skill">Full Stack</span>
-                    <span class="member-skill">AI/ML</span>
-                    <span class="member-skill">System Design</span>
-                </div>
-                <div class="member-socials">
-                    <a href="https://www.linkedin.com/in/mazen-siddig-929304213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                    <a href="https://www.facebook.com/mazen.mahameb" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 2 - مدثر الهادي -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">مﻫ</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">مدثر الهادي</h4>
-                <span class="member-role" itemprop="jobTitle">جرافيك ديزاين</span>
-                <div class="member-skills">
-                    <span class="member-skill">Graphic Design</span>
-                    <span class="member-skill">UI/UX</span>
-                    <span class="member-skill">Branding</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.behance.net/Mudther_Alhadi" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="member-social"><i class="fab fa-behance"></i></a>
-                    <a href="#" aria-label="Dribbble" class="member-social"><i class="fab fa-dribbble"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 3 - سعد اسامه -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-blue), var(--brand-green)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">سع</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">سعد اسامه</h4>
-                <span class="member-role" itemprop="jobTitle">مطور ذكاء اصطناعي وأوتوميشن</span>
-                <div class="member-skills">
-                    <span class="member-skill">Automation</span>
-                    <span class="member-skill">AI</span>
-                    <span class="member-skill">RPA</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 4 - أ- صلاح -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-gold)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">صل</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">صلاح الدين عبد العزيز</h4>
-                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
-                <div class="member-skills">
-                    <span class="member-skill">Data Analysis</span>
-                    <span class="member-skill">Power BI</span>
-                    <span class="member-skill">SQL</span>
-                </div>
-                <div class="member-socials">
-                    <a href="https://www.linkedin.com/in/salaheldin-abdoelziz-a3834336a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Kaggle" class="member-social"><i class="fas fa-chart-line"></i></a>
-                </div>
-            </div>
-
-
-            <!-- العضو 5 - نورا - داتا أناليسيس -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, #ff6b9d, var(--brand-blue)); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: white;">نو</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">نورا</h4>
-                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
-                <div class="member-skills">
-                    <span class="member-skill">Data Analysis</span>
-                    <span class="member-skill">Python</span>
-                    <span class="member-skill">SQL</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub" class="member-social"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-
-            <!-- العضو 6 - اسيا مبارك -->
-            <div class="team-member" itemscope itemtype="https://schema.org/Person">
-                <div class="member-avatar-wrapper">
-                    <div class="member-avatar" style="background: linear-gradient(135deg, var(--brand-gold), #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 900; color: var(--bg-primary);">أس</div>
-                    <div class="member-avatar-ring"></div>
-                </div>
-                <h4 class="member-name" itemprop="name">اسيا مبارك</h4>
-                <span class="member-role" itemprop="jobTitle">داتا أناليسيس</span>
-                <div class="member-skills">
-                    <span class="member-skill">Data Analysis</span>
-                    <span class="member-skill">Research</span>
-                    <span class="member-skill">Reporting</span>
-                </div>
-                <div class="member-socials">
-                    <a href="#" aria-label="LinkedIn" class="member-social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook" class="member-social"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
+          </div>
         </div>
+        <!-- Name -->
+        <h4 class="team-name-ar" itemprop="name">مازن القيصر</h4>
+        <p class="team-name-en">MR Mazen Al-Qayser</p>
+        <!-- Divider -->
+        <div class="team-divider">
+          <div class="team-divider-line"></div>
+          <div class="team-divider-dot amber"></div>
+          <div class="team-divider-line"></div>
+        </div>
+        <!-- Role -->
+        <p class="team-role-ar amber" itemprop="jobTitle">المدير التنفيذي</p>
+        <p class="team-role-en">CEO & Software AI Developer</p>
+        <!-- Skills -->
+        <div class="team-skills">
+          <span class="team-skill">Full Stack</span>
+          <span class="team-skill">AI / ML</span>
+          <span class="team-skill">System Design</span>
+        </div>
+        <!-- Socials -->
+        <div class="team-socials">
+          <a href="https://github.com/mazen-alqayser" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="GitHub" class="team-social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mazen-siddig-929304213/" target="_blank" rel="noopener noreferrer" itemprop="sameAs" aria-label="LinkedIn" class="team-social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════ MEMBER 2: مدثر الهادي ══════════ -->
+      <div class="team-card" data-accent="emerald" itemscope itemtype="https://schema.org/Person">
+        <!-- Avatar (Initials) -->
+         
+        <div class="team-avatar-wrap">
+          <div class="team-avatar-glow" style="background: linear-gradient(135deg, #34d399, #14b8a6, #06b6d4);"></div>
+          <div class="team-avatar-ring" style="background: linear-gradient(135deg, #34d399, #14b8a6, #06b6d4);">
+            <div class="team-avatar-inner">
+  <div class="team-avatar-inner">
+              <img src="https://pps.services.adobe.com/api/profile/772C21D668DEA9680A495FFA@AdobeID/image/15d6f7fa-36a3-408c-bef2-e2be660eb6cb/230" alt="مدثر الهادي" itemprop="image" loading="lazy">
+            </div>            </div>
+          </div>
+        </div>
+        <!-- Name -->
+        <h4 class="team-name-ar" itemprop="name">مدثر الهادي</h4>
+        <p class="team-name-en">MR Mudather Al-Hadi</p>
+        <!-- Divider -->
+        <div class="team-divider">
+          <div class="team-divider-line"></div>
+          <div class="team-divider-dot emerald"></div>
+          <div class="team-divider-line"></div>
+        </div>
+        <!-- Role -->
+        <p class="team-role-ar emerald" itemprop="jobTitle">مدير قسم الجرافيك ديزاين والتصميم</p>
+        <p class="team-role-en">Graphic Design Manager</p>
+        <!-- Skills -->
+        <div class="team-skills">
+          <span class="team-skill">Graphic Design</span>
+          <span class="team-skill">UI/UX</span>
+          <span class="team-skill">Branding</span>
+        </div>
+        <!-- Socials -->
+        <div class="team-socials">
+          <a href="https://www.behance.net/Mudther_Alhadi" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="team-social-link">
+            <i class="fab fa-behance"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════ MEMBER 3: سعد اسامه ══════════ -->
+      <div class="team-card" data-accent="violet" itemscope itemtype="https://schema.org/Person">
+        <!-- Avatar -->
+        <div class="team-avatar-wrap">
+          <div class="team-avatar-glow" style="background: linear-gradient(135deg, #a78bfa, #8b5cf6, #d946ef);"></div>
+          <div class="team-avatar-ring" style="background: linear-gradient(135deg, #a78bfa, #8b5cf6, #d946ef);">
+            <div class="team-avatar-inner">
+              <img src="https://avatars.githubusercontent.com/saadosama256256" alt="سعد اسامه" itemprop="image" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <!-- Name -->
+        <h4 class="team-name-ar" itemprop="name">أ. سعد اسامه</h4>
+        <p class="team-name-en">MR Saad Osama</p>
+        <!-- Divider -->
+        <div class="team-divider">
+          <div class="team-divider-line"></div>
+          <div class="team-divider-dot violet"></div>
+          <div class="team-divider-line"></div>
+        </div>
+        <!-- Role -->
+        <p class="team-role-ar violet" itemprop="jobTitle">مسؤول قسم الاتوميشن والذكاء الاصطناعي</p>
+        <p class="team-role-en">Automation & AI Lead</p>
+        <!-- Skills -->
+        <div class="team-skills">
+          <span class="team-skill">Automation</span>
+          <span class="team-skill">AI</span>
+          <span class="team-skill">RPA</span>
+          <span class="team-skill">Software Engineering</span>
+
+        </div>
+        <!-- Socials -->
+        <div class="team-socials">
+          <a href="https://github.com/saadosama256256" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="team-social-link">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
+<!-- ==================== END TEAM SECTION ==================== -->
+
 
         <!-- ==================== CHATBOT SECTION ==================== -->
         <section class="chatbot-section section-padding" id="chatbot" aria-label="بوت Vees الذكي">
@@ -4936,7 +5192,7 @@
             <p class="copyright" data-key="copyright">
                 © <span id="currentYear"></span> 
                 <span itemprop="name">Vees Technologies</span>. 
-                <span data-key="copyright_text">جميع الحقوق محفوظة. صُمم بتقنية ❤️ بواسطة</span>
+                <span data-key="copyright_text">جميع الحقوق محفوظة. صُمم بتقنية فريده ❤️ بواسطة</span>
             </p>
             
             <a href="https://mazenalqaysercv.vercel.app/" target="_blank" rel="noopener noreferrer" class="developer-link" itemprop="founder" itemscope itemtype="https://schema.org/Person">
